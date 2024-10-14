@@ -2,7 +2,7 @@
 
 ## Info
 
-Nama aplikasi: Rencanain
+Nama aplikasi: Rencanain  
 Tim pengembang: Kelompok 4
 
 - Frengky Saputra - 221402021  

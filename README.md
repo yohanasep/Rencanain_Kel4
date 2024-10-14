@@ -91,7 +91,7 @@ Beberapa syarat environment untuk menjalankan aplikasi ini:
 3. **Clone Repository**
     - Clone repository ini ke lokal komputer:
       ```
-      git clone https://github.com/yohanasep/rencanain.git
+      git clone https://github.com/yohanasep/Rencanain.git
       ```
       ```
       cd Rencanain

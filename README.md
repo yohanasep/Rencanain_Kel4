@@ -11,16 +11,16 @@ Tim pengembang: Kelompok 4
 - Clinton Christovel Simanullang - 221402043  
   Role : Back-End
 
-- Yohana Septamia - 221402056
+- Yohana Septamia - 221402056  
   Role : Project Manager & Front End
 
-- Melia Purnamasari Sihombing - 221402112 
+- Melia Purnamasari Sihombing - 221402112  
   Role : Back-End
 
 - Muhammad Ahsanul Kholiqin Lubis - 221402115  
   Role : Front End & Tester
 
-- Yeni Aulia Sinaga - 221402138 
+- Yeni Aulia Sinaga - 221402138  
   Role : UI/UX Designer & Dokumenter
 
 ## Desc

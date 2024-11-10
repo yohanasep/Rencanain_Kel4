@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".workspace.ProjectDetailActivity">
+
+    <ImageView
+        android:id="@+id/imgProject"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/baseline_image_24"/>
+
+    <TextView
+        android:id="@+id/labelProjectTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="untukJudul"
+        android:paddingHorizontal="40dp"
+        android:textColor="#000000"
+        />
+
+    <TextView
+        android:id="@+id/labelProjectDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:paddingHorizontal="40dp"
+        android:text="untukDeskripsi"
+        android:textColor="#000000"
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#e1e1e1"
+        android:layout_marginTop="16dp"
+        android:radius="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_margin="40dp">
+
+            <TextView
+                android:id="@+id/labelPenugasan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Penugasan"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnAddNewTask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="end"
+                android:background="#76ABAE"
+                />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

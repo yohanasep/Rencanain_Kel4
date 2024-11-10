@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Rencanain"
         tools:targetApi="31">
         <activity
+            android:name=".jadwalku.myScheduleDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".jadwalku.myScheduleListActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

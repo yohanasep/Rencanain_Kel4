@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Rencanain"
         tools:targetApi="31">
         <activity
+            android:name=".profil.ProfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".workspace.AddSubTaskActivity"
+            android:exported="false" />
+        <activity
             android:name=".workspace.ProjectDetailActivity"
             android:exported="false" />
         <activity android:name=".workspace.ProjectListActivity" />

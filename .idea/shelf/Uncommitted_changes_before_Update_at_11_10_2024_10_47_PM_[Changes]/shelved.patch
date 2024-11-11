@@ -1,0 +1,366 @@
+Index: app/src/main/res/layout/activity_main.xml
+===================================================================
+diff --git a/app/src/main/res/layout/activity_main.xml b/app/src/main/res/layout/activity_main.xml
+deleted file mode 100644
+--- a/app/src/main/res/layout/activity_main.xml	(revision c0323fd8a4dd2f2bbf3dfbc24239a514fb8d71b0)
++++ /dev/null	(revision c0323fd8a4dd2f2bbf3dfbc24239a514fb8d71b0)
+@@ -1,19 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:id="@+id/main"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    tools:context=".MainActivity">
+-
+-    <TextView
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:text="Hello World!"
+-        app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toTopOf="parent" />
+-
+-</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_main_login.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_main_login.xml b/app/src/main/res/layout/activity_main_login.xml
+new file mode 100644
+--- /dev/null	(date 1731251697871)
++++ b/app/src/main/res/layout/activity_main_login.xml	(date 1731251697871)
+@@ -0,0 +1,70 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout
++    xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:background="#1B1B1B">
++
++    <ImageView
++        android:id="@+id/img"
++        android:layout_width="80dp"
++        android:layout_height="80dp"
++        android:src="@mipmap/logo_foreground"
++        tools:layout_editor_absoluteX="102dp"
++        tools:layout_editor_absoluteY="325dp"
++        tools:ignore="MissingConstraints">
++    </ImageView>
++
++    <TextView
++        android:id="@+id/label"
++        android:layout_height="wrap_content"
++        android:layout_width="wrap_content"
++        android:text="Rencanain"
++        android:textColor="#FFFFFF"
++        android:textSize="24sp"
++        android:textStyle="bold"
++        tools:layout_editor_absoluteX="191dp"
++        tools:layout_editor_absoluteY="349dp"
++        tools:ignore="MissingConstraints">
++    </TextView>
++
++    <Button
++        android:id="@+id/btnGoogle"
++        android:layout_width="345dp"
++        android:layout_height="50dp"
++        android:backgroundTint="#FFFFFF"
++        android:padding="8dp"
++        android:text="Lanjutkan dengan Google"
++        android:textColor="#000000"
++        tools:layout_editor_absoluteX="33dp"
++        tools:layout_editor_absoluteY="430dp"
++        tools:ignore="MissingConstraints">
++    </Button>
++
++    <EditText
++        android:id="@+id/addEmail"
++        android:layout_width="345dp"
++        android:layout_height="60dp"
++        android:layout_marginHorizontal="32dp"
++        android:backgroundTint="#FFFFFF"
++        android:hint="Masukkan alamat email kamu"
++        android:textColorHint="#FFF"
++        tools:layout_editor_absoluteX="33dp"
++        tools:layout_editor_absoluteY="507dp"
++        tools:ignore="MissingConstraints">
++    </EditText>
++
++    <Button
++        android:id="@+id/btnMasuk"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:backgroundTint="#FFFFFF"
++        android:text="Masuk"
++        android:textColor="#1C1C1C"
++        tools:layout_editor_absoluteX="160dp"
++        tools:layout_editor_absoluteY="603dp"
++        tools:ignore="MissingConstraints">
++    </Button>
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+Index: app/src/main/res/layout/activity_main_login2.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_main_login2.xml b/app/src/main/res/layout/activity_main_login2.xml
+new file mode 100644
+--- /dev/null	(date 1731252544219)
++++ b/app/src/main/res/layout/activity_main_login2.xml	(date 1731252544219)
+@@ -0,0 +1,97 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout
++    xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:background="#1B1B1B">
++
++    <ImageView
++        android:id="@+id/img"
++        android:layout_width="80dp"
++        android:layout_height="80dp"
++        android:src="@mipmap/logo_foreground"
++        tools:ignore="MissingConstraints"
++        tools:layout_editor_absoluteX="92dp"
++        tools:layout_editor_absoluteY="76dp"></ImageView>
++
++    <TextView
++        android:id="@+id/label"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:text="Rencanain"
++        android:textColor="#FFFFFF"
++        android:textSize="24sp"
++        android:textStyle="bold"
++        tools:ignore="MissingConstraints"
++        tools:layout_editor_absoluteX="188dp"
++        tools:layout_editor_absoluteY="97dp"></TextView>
++
++    <Button
++        android:id="@+id/btnGoogle"
++        android:layout_width="345dp"
++        android:layout_height="50dp"
++        android:backgroundTint="#FFFFFF"
++        android:padding="8dp"
++        android:text="Lanjutkan dengan Google"
++        android:textColor="#000000"
++        tools:ignore="MissingConstraints"
++        tools:layout_editor_absoluteX="33dp"
++        tools:layout_editor_absoluteY="177dp"></Button>
++
++    <TextView
++        android:id="@+id/labelEmail"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:text="Email"
++        android:textColor="#FFF"
++        tools:ignore="MissingConstraints"
++        tools:layout_editor_absoluteX="33dp"
++        tools:layout_editor_absoluteY="255dp"></TextView>
++
++    <EditText
++        android:id="@+id/addEmail"
++        android:layout_width="345dp"
++        android:layout_height="60dp"
++        android:layout_marginHorizontal="32dp"
++        android:backgroundTint="#FFFFFF"
++        android:hint="Masukkan alamat email kamu"
++        android:textColorHint="#FFF"
++        tools:ignore="MissingConstraints"
++        tools:layout_editor_absoluteX="33dp"
++        tools:layout_editor_absoluteY="289dp"></EditText>
++
++    <EditText
++        android:id="@+id/addKode"
++        android:layout_width="345dp"
++        android:layout_height="60dp"
++        android:layout_marginHorizontal="32dp"
++        android:backgroundTint="#FFFFFF"
++        android:hint="Masukkan kode masuk"
++        android:textColorHint="#FFF"
++        tools:ignore="MissingConstraints"
++        tools:layout_editor_absoluteX="33dp"
++        tools:layout_editor_absoluteY="414dp"></EditText>
++
++    <TextView
++        android:id="@+id/labelKode"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:text="Kode"
++        android:textColor="#FFF"
++        tools:ignore="MissingConstraints"
++        tools:layout_editor_absoluteX="33dp"
++        tools:layout_editor_absoluteY="379dp"></TextView>
++
++    <Button
++        android:id="@+id/btnMasuk"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:backgroundTint="#FFFFFF"
++        android:text="Masuk"
++        android:textColor="#1C1C1C"
++        tools:ignore="MissingConstraints"
++        tools:layout_editor_absoluteX="160dp"
++        tools:layout_editor_absoluteY="525dp"></Button>
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+Index: app/src/main/res/drawable/logo_background.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/logo_background.xml b/app/src/main/res/drawable/logo_background.xml
+new file mode 100644
+--- /dev/null	(date 1731248953193)
++++ b/app/src/main/res/drawable/logo_background.xml	(date 1731248953193)
+@@ -0,0 +1,74 @@
++<?xml version="1.0" encoding="utf-8"?>
++<vector
++    android:height="108dp"
++    android:width="108dp"
++    android:viewportHeight="108"
++    android:viewportWidth="108"
++    xmlns:android="http://schemas.android.com/apk/res/android">
++    <path android:fillColor="#3DDC84"
++          android:pathData="M0,0h108v108h-108z"/>
++    <path android:fillColor="#00000000" android:pathData="M9,0L9,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M19,0L19,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M29,0L29,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M39,0L39,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M49,0L49,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M59,0L59,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M69,0L69,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M79,0L79,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M89,0L89,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M99,0L99,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,9L108,9"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,19L108,19"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,29L108,29"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,39L108,39"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,49L108,49"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,59L108,59"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,69L108,69"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,79L108,79"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,89L108,89"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,99L108,99"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M19,29L89,29"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M19,39L89,39"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M19,49L89,49"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M19,59L89,59"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M19,69L89,69"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M19,79L89,79"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M29,19L29,89"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M39,19L39,89"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M49,19L49,89"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M59,19L59,89"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M69,19L69,89"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M79,19L79,89"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++</vector>
+Index: app/src/main/res/mipmap-anydpi-v26/logo.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/mipmap-anydpi-v26/logo.xml b/app/src/main/res/mipmap-anydpi-v26/logo.xml
+new file mode 100644
+--- /dev/null	(date 1731248953225)
++++ b/app/src/main/res/mipmap-anydpi-v26/logo.xml	(date 1731248953225)
+@@ -0,0 +1,5 @@
++<?xml version="1.0" encoding="utf-8"?>
++<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
++    <background android:drawable="@drawable/logo_background"/>
++    <foreground android:drawable="@mipmap/logo_foreground"/>
++</adaptive-icon>
+\ No newline at end of file
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"GradleSettings\">\r\n    <option name=\"linkedExternalProjectsSettings\">\r\n      <GradleProjectSettings>\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"gradleJvm\" value=\"#GRADLE_LOCAL_JAVA_HOME\" />\r\n        <option name=\"modules\">\r\n          <set>\r\n            <option value=\"$PROJECT_DIR$\" />\r\n            <option value=\"$PROJECT_DIR$/app\" />\r\n          </set>\r\n        </option>\r\n        <option name=\"resolveExternalAnnotations\" value=\"false\" />\r\n      </GradleProjectSettings>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+--- a/.idea/gradle.xml	(revision c0323fd8a4dd2f2bbf3dfbc24239a514fb8d71b0)
++++ b/.idea/gradle.xml	(date 1730295569026)
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="GradleMigrationSettings" migrationVersion="1" />
+   <component name="GradleSettings">
+     <option name="linkedExternalProjectsSettings">
+       <GradleProjectSettings>
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_1_7\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision c0323fd8a4dd2f2bbf3dfbc24239a514fb8d71b0)
++++ b/.idea/misc.xml	(date 1730296144021)
+@@ -1,7 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ExternalStorageConfigurationManager" enabled="true" />
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/build/classes" />
+   </component>
+   <component name="ProjectType">
+Index: app/src/main/res/mipmap-anydpi-v26/logo_round.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/mipmap-anydpi-v26/logo_round.xml b/app/src/main/res/mipmap-anydpi-v26/logo_round.xml
+new file mode 100644
+--- /dev/null	(date 1731248632582)
++++ b/app/src/main/res/mipmap-anydpi-v26/logo_round.xml	(date 1731248632582)
+@@ -0,0 +1,5 @@
++<?xml version="1.0" encoding="utf-8"?>
++<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
++    <background android:drawable="@drawable/logo_background"/>
++    <foreground android:drawable="@mipmap/logo_foreground"/>
++</adaptive-icon>
+\ No newline at end of file

@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import komc.kel4.rencanain.workspace.ProjectListActivity
+import komc.kel4.rencanain.workspace.HomeActivity
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var btnGoToProject: Button

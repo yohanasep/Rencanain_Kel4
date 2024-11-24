@@ -33,15 +33,12 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> 35e2f4878aa996725e47011d0008b379d2d5ae40
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

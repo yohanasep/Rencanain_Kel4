@@ -4,16 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1B1B1B">
-
-
+    android:theme="@style/Theme.Rencanain">
 
     <TextView
         android:id="@+id/labelDaftarAnggota"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Daftar Anggota"
-        android:textColor="#FFFFFF"
+        android:text="@string/labelDaftarAnggota"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,8 +24,7 @@
         android:id="@+id/labelAnggota"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Anggota (6)"
-        android:textColor="#FFFFFF"
+        android:text="@string/labelAnggota"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.139"
@@ -41,7 +37,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tambah Anggota"
-        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.253"
@@ -50,193 +45,28 @@
         app:layout_constraintVertical_bias="0.054" />
 
     <TextView
-        android:id="@+id/labelYosep"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="yosep_"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.209"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelTambahAnggota"
-        app:layout_constraintVertical_bias="0.032" />
-
-    <TextView
-        android:id="@+id/labelFrengky"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="frank_"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.209"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelYosep"
-        app:layout_constraintVertical_bias="0.039" />
-
-    <TextView
         android:id="@+id/labelClinton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="clintonchriss_"
-        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.24"
+        app:layout_constraintHorizontal_bias="0.236"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelFrengky"
-        app:layout_constraintVertical_bias="0.042" />
-
-    <TextView
-        android:id="@+id/labelYeni"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="yenn_"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.209"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelClinton"
-        app:layout_constraintVertical_bias="0.039" />
-
-    <TextView
-        android:id="@+id/labelMelia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="memell_"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.209"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelYeni"
-        app:layout_constraintVertical_bias="0.039" />
-
-    <TextView
-        android:id="@+id/labelAhsan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="yellowkun_"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.219"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelMelia"
-        app:layout_constraintVertical_bias="0.05" />
-
-
-    <ImageView
-        android:id="@+id/imgYosep"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="164dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/labelYosep"
-        app:layout_constraintHorizontal_bias="0.849"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgBtnAdd"
-        app:layout_constraintVertical_bias="0.033"
-        app:srcCompat="@drawable/baseline_image_24"
-        app:tint="#FFFFFF" />
-
-    <ImageView
-        android:id="@+id/imgFrank"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="164dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/labelFrengky"
-        app:layout_constraintHorizontal_bias="0.814"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgYosep"
-        app:layout_constraintVertical_bias="0.047"
-        app:srcCompat="@drawable/baseline_image_24"
-        app:tint="#FFFFFF" />
+        app:layout_constraintTop_toBottomOf="@+id/labelTambahAnggota"
+        app:layout_constraintVertical_bias="0.054" />
 
     <ImageView
         android:id="@+id/imgClinton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="164dp"
+        android:layout_marginEnd="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/labelClinton"
-        app:layout_constraintHorizontal_bias="0.814"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgFrank"
-        app:layout_constraintVertical_bias="0.054"
-        app:srcCompat="@drawable/baseline_image_24"
-        app:tint="#FFFFFF" />
-
-    <ImageView
-        android:id="@+id/imgYeni"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="164dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/labelYeni"
-        app:layout_constraintHorizontal_bias="0.814"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgClinton"
-        app:layout_constraintVertical_bias="0.05"
-        app:srcCompat="@drawable/baseline_image_24"
-        app:tint="#FFFFFF" />
-
-    <ImageView
-        android:id="@+id/imgMelia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="164dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/labelMelia"
-        app:layout_constraintHorizontal_bias="0.862"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgYeni"
-        app:layout_constraintVertical_bias="0.049"
-        app:srcCompat="@drawable/baseline_image_24"
-        app:tint="#FFFFFF" />
-
-    <ImageView
-        android:id="@+id/imgAhsan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="164dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/labelAhsan"
-        app:layout_constraintHorizontal_bias="0.862"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgYeni"
-        app:layout_constraintVertical_bias="0.245"
-        app:srcCompat="@drawable/baseline_image_24"
-        app:tint="#FFFFFF" />
-
-    <ImageButton
-        android:id="@+id/imgBtnAdd"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="24dp"
-        android:background="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/labelTambahAnggota"
-        app:layout_constraintHorizontal_bias="0.826"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelAnggota"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/baseline_add_box_24" />
-
-    <ImageButton
-        android:id="@+id/imgBtnSearch"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:background="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.627"
-        app:layout_constraintStart_toEndOf="@+id/labelAnggota"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.207"
-        app:srcCompat="@drawable/baseline_search_24" />
+        app:layout_constraintVertical_bias="0.342"
+        app:srcCompat="@drawable/baseline_image_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

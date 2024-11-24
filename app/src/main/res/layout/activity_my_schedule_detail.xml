@@ -5,27 +5,22 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:theme="@style/Theme.Rencanain"
     tools:context=".jadwalku.myScheduleDetailActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="20dp">
 
         <!-- Jadwal Start -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginVertical="20dp"
             android:layout_marginBottom="20dp"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+            android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/scheduleName"
@@ -41,9 +36,6 @@
                     android:layout_height="wrap_content"
                     android:text="Jam jadwal"
                     android:textSize="12sp" />
-
-            </LinearLayout>
-
         </LinearLayout>
         <!-- Jadwal End -->
 
@@ -51,9 +43,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
             android:layout_marginTop="30dp"
-            android:layout_marginRight="20dp"
             android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
@@ -62,7 +52,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Due Date"
+                android:text="@string/dueDateLabel"
                 android:textSize="14sp" />
 
             <RelativeLayout
@@ -81,18 +71,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
             android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/timerLabel"
+                android:id="@+id/labelTimer"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Timer"
+                android:text="@string/labelTimer"
                 android:textSize="14sp" />
 
             <RelativeLayout
@@ -111,18 +99,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
             android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/repeatLabel"
+                android:id="@+id/labelRepeatTask"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Repeat Task"
+                android:text="@string/labelUlangi"
                 android:textSize="14sp" />
 
             <RelativeLayout

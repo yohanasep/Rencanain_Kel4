@@ -2,30 +2,33 @@ package komc.kel4.rencanain
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import komc.kel4.rencanain.databinding.ActivityMainBinding
 import komc.kel4.rencanain.workspace.ProjectListActivity
-import komc.kel4.rencanain.workspace.HomeActivity
-
+import komc.kel4.rencanain.jadwalku.myScheduleListActivity
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var btnGoToProject: Button
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        // Set OnClickListener untuk tombol yang ada di bottom navigation
+        binding.bottomNav.imgBtnHome.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
 
-        btnGoToProject = findViewById(R.id.btnGoToProject)
-        btnGoToProject.setOnClickListener {
+        binding.bottomNav.imgBtnAddSchedule.setOnClickListener {
+            val intent = Intent(this, myScheduleListActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.bottomNav.imgBtnProjectList.setOnClickListener {
             val intent = Intent(this, ProjectListActivity::class.java)
             startActivity(intent)
         }

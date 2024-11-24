@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="40dp"
+    android:background="?attr/background"
+    android:padding="20dp"
     tools:context=".workspace.AddSubTaskActivity">
 
     <TextView
@@ -19,13 +20,12 @@
         />
 
     <TextView
-        android:id="@+id/labelSubTugas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:text="Subtugas"
+        android:text="@string/labelSubtugas"
         />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -35,17 +35,16 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nama Subtugas" />
+            android:hint="@string/ETextNamaSubtugas" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/labelTaskFor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:text="Tugaskan Kepada"
+        android:text="@string/labelTugaskanKepada"
         />
 
 

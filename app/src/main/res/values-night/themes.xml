@@ -3,7 +3,6 @@
     <style name="Base.Theme.Rencanain" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="backgroundColor">@color/background_color_DM</item>
         <item name="color">@color/text_color_DM</item>
-        <item name="tint">@color/tint_color_DM</item>
     </style>
 
     <style name="Theme.Rencanain" parent="Base.Theme.Rencanain" />

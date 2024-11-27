@@ -1,12 +1,12 @@
 package komc.kel4.rencanain
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import komc.kel4.rencanain.databinding.ActivityMainBinding
-import komc.kel4.rencanain.workspace.ProjectListActivity
-import komc.kel4.rencanain.jadwalku.myScheduleListActivity
+import komc.kel4.rencanain.jadwalku.MyScheduleFragment
+import komc.kel4.rencanain.workspace.ProjectListFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -16,21 +16,26 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        replaceFragment(HomeFragment())
 
-        // Set OnClickListener untuk tombol yang ada di bottom navigation
-        binding.bottomNav.imgBtnHome.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
+        binding.bottomNavigationView.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.menuHome -> replaceFragment(HomeFragment())
+                R.id.menuSchedules -> replaceFragment(MyScheduleFragment())
+                R.id.menuProjects -> replaceFragment(ProjectListFragment())
 
-        binding.bottomNav.imgBtnAddSchedule.setOnClickListener {
-            val intent = Intent(this, myScheduleListActivity::class.java)
-            startActivity(intent)
+                else -> {
+                    replaceFragment(HomeFragment())
+                }
+            }
+            true
         }
+    }
 
-        binding.bottomNav.imgBtnProjectList.setOnClickListener {
-            val intent = Intent(this, ProjectListActivity::class.java)
-            startActivity(intent)
-        }
+    private fun replaceFragment(fragment: Fragment) {
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.frame_layout, fragment)
+        fragmentTransaction.commit()
     }
 }

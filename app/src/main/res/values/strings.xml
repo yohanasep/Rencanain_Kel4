@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Rencanain</string>
 
+    <!-- Register -->
+    <string name="btnRegister">Daftar</string>
+
     <!-- Login -->
     <string name="btnMasuk">Masuk</string>
     <string name="labelEmail">Email</string>
@@ -18,10 +21,12 @@
     <string name="labelTimer">Timer</string>
     <string name="labelUlangi">Ulangi</string>
     <string name="labelDaftarJadwalku">Daftar Jadwalku</string>
+    <string name="btnGoToAddSchedule">Tambah Jadwalku</string>
 
     <!-- Project List -->
     <string name="labelProjekku">Projekku</string>
     <string name="labelPenugasan">Penugasan</string>
+    <string name="btnGoToAddProject">Tambah Projek</string>
 
     <!-- Profile -->
     <string name="labelAkun">Akun</string>
@@ -33,4 +38,5 @@
     <string name="labelSubtugas">Subtugas</string>
     <string name="labelTugaskanKepada">Tugaskan Kepada</string>
     <string name="ETextNamaSubtugas">Masukkan nama subtugas</string>
+
 </resources>

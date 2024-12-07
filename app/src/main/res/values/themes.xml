@@ -3,8 +3,9 @@
     <style name="Base.Theme.Rencanain" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="backgroundColor">@color/background_color_LM</item>
         <item name="color">@color/text_color_LM</item>
-        <item name="tint">@color/tint_color_LM</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
     </style>
 
     <style name="Theme.Rencanain" parent="Base.Theme.Rencanain" />
+
 </resources>

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:theme="@style/Theme.Rencanain"
-    android:padding="20dp">
+    android:padding="20dp"
+    tools:context=".RegisterActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -76,6 +77,7 @@
             android:inputType="textEmailAddress"
             app:layout_constraintBottom_toTopOf="@+id/labelPassword"
             app:layout_constraintTop_toBottomOf="@+id/label" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -102,14 +104,13 @@
             app:layout_constraintBottom_toTopOf="@+id/btnMasuk"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnMasuk"
+        android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btnMasuk"
+        android:text="@string/btnRegister"
         android:layout_marginTop="10dp" />
 
 </LinearLayout>

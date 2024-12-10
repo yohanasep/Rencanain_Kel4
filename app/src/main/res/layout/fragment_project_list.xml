@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/Theme.Rencanain"
-    tools:context=".workspace.ProjectListFragment">
+    tools:context=".workspace.ProjectListFragment"
+    android:paddingVertical="20dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,14 +20,6 @@
             android:gravity="center"
             android:text="@string/labelProjekku" />
 
-        <Button
-            android:id="@+id/btnGoAddProject"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:text="@string/btnGoToAddProject"
-            android:layout_gravity="end"/>
-
         <SearchView
             android:id="@+id/btnSearch"
             android:layout_width="match_parent"
@@ -37,12 +30,24 @@
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="1dp" />
 
-        <androidx.recyclerview.widget.RecyclerView
+        <ListView
             android:id="@+id/rvProject"
             android:layout_width="match_parent"
             android:layout_height="528dp"
             android:layout_margin="8dp"
             tools:listitem="@layout/row_project" />
+
     </LinearLayout>
+
+    <!-- Floating button ke Tambah Project -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnGoAddNewProject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:src="@drawable/baseline_add_24"
+        android:contentDescription="@string/btnGoToAddProject"/>
 
 </FrameLayout>

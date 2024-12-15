@@ -41,17 +41,6 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnGoogle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/btnContinueWithGoogle"
-        android:layout_marginVertical="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMasuk" />
-
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -79,6 +68,7 @@
             app:layout_constraintTop_toBottomOf="@+id/label" />
 
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -112,5 +102,16 @@
         android:layout_height="wrap_content"
         android:text="@string/btnRegister"
         android:layout_marginTop="10dp" />
+
+    <Button
+        android:id="@+id/btnGoogle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="30dp"
+        android:text="@string/btnMasuk"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMasuk" />
 
 </LinearLayout>

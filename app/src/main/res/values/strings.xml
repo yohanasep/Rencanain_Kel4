@@ -7,10 +7,12 @@
     <!-- Login -->
     <string name="btnMasuk">Masuk</string>
     <string name="labelEmail">Email</string>
+    <string name="labelUname">Username</string>"
     <string name="labelPassword">Password</string>
     <string name="ETextMasukkanPassword">Masukkan password</string>
     <string name="btnContinueWithGoogle">Lanjutkan dengan Google</string>
-    <string name="ETextEmail">Masukkan alamat email kamu</string>
+    <string name="ETextEmail">Masukkan email</string>
+    <string name="ETextUname">Masukkan username</string>
 
     <!-- Member List -->
     <string name="labelDaftarAnggota">Daftar Anggota</string>
@@ -38,5 +40,14 @@
     <string name="labelSubtugas">Subtugas</string>
     <string name="labelTugaskanKepada">Tugaskan Kepada</string>
     <string name="ETextNamaSubtugas">Masukkan nama subtugas</string>
+
+    <!-- Add New Project -->
+    <string name="labelProjectName">Nama Proyek</string>
+    <string name="labelProjectDescription">Deskripsi Proyek</string>
+    <string name="labelAddNewProject">Tambah proyek</string>
+
+    <!-- Add New Schedule -->
+    <string name="labelScheduleName">Jadwal saya</string>
+    <string name="labelScheduleDescription">Deskripsi</string>
 
 </resources>

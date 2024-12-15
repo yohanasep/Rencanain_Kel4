@@ -17,9 +17,9 @@
         android:layout_marginTop="20dp">
         <ImageView
             android:id="@+id/img"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@mipmap/logo_foreground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher_foreground"
             app:layout_constraintBottom_toTopOf="@+id/ETextEmail"
             app:layout_constraintEnd_toStartOf="@+id/label"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,18 +40,13 @@
 
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="30dp">
+        android:layout_marginVertical="10dp">
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/labelEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/labelEmail" />
@@ -61,17 +56,18 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:autofillHints="emailAddress"
-            android:hint="@string/ETextEmail"
+            android:importantForAccessibility="no"
             android:inputType="textEmailAddress"
             app:layout_constraintBottom_toTopOf="@+id/labelPassword"
             app:layout_constraintTop_toBottomOf="@+id/label" />
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginVertical="10dp">
+        android:layout_marginBottom="10dp">
         <TextView
             android:id="@+id/labelPassword"
             android:layout_width="wrap_content"
@@ -86,12 +82,11 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:autofillHints="password"
-            android:hint="@string/ETextMasukkanPassword"
+            android:importantForAccessibility="no"
             android:inputType="textPassword"
             app:layout_constraintBottom_toTopOf="@+id/btnMasuk"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
     </LinearLayout>
 
     <Button
@@ -100,16 +95,5 @@
         android:layout_height="wrap_content"
         android:text="@string/btnMasuk"
         android:layout_marginTop="10dp" />
-
-    <Button
-        android:id="@+id/btnGoogle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="30dp"
-        android:text="@string/btnRegister"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMasuk" />
 
 </LinearLayout>

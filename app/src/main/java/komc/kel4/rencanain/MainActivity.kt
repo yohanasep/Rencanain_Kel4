@@ -38,4 +38,8 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.replace(R.id.frame_layout, fragment)
         fragmentTransaction.commit()
     }
+
+    fun setActiveNavItem(menuItemId: Int) {
+        binding.bottomNavigationView.menu.findItem(menuItemId).isChecked = true
+    }
 }

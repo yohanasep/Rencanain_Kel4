@@ -9,6 +9,29 @@
     android:theme="@style/Theme.Rencanain"
     tools:context=".workspace.ProjectDetailActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="20dp"
+        android:paddingHorizontal="20dp">
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/background_color_LM"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="10dp"
+            app:srcCompat="@drawable/baseline_arrow_back_24" />
+        <TextView
+            android:id="@+id/labelDetailProyek"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:textSize="16sp"
+            android:text="@string/labelProjectDetail"/>
+    </LinearLayout>
+
     <ImageView
         android:id="@+id/imgProject"
         android:layout_width="match_parent"

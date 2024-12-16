@@ -24,14 +24,20 @@
     <string name="labelUlangi">Ulangi</string>
     <string name="labelDaftarJadwalku">Daftar Jadwalku</string>
     <string name="btnGoToAddSchedule">Tambah Jadwalku</string>
+    <string name="labelForLabel">Label</string>
+    <string name="labelDueDate">Tenggat</string>
+    <string name="labelStatus">Status</string>
+    <string name="labelPriorityLevel">Level Prioritas</string>
 
     <!-- Project List -->
     <string name="labelProjekku">Projekku</string>
     <string name="labelPenugasan">Penugasan</string>
     <string name="btnGoToAddProject">Tambah Projek</string>
+    <string name="labelProjectDetail">Detail Proyek</string>
 
     <!-- Profile -->
     <string name="labelAkun">Akun</string>
+    <string name="labelProfile">Profil</string>
 
     <!-- Home -->
     <string name="labelJadwalku">Jadwalku</string>
@@ -49,5 +55,9 @@
     <!-- Add New Schedule -->
     <string name="labelScheduleName">Jadwal saya</string>
     <string name="labelScheduleDescription">Deskripsi</string>
+    <string name="labelAddNewSchedule">Tambah jadwal</string>
+    <string name="labelScheduleDetail">Detail Jadwal</string>"
 
+    <!-- Button Submit -->
+    <string name="labelSubmit">Submit</string>
 </resources>

@@ -1,5 +1,6 @@
 package komc.kel4.rencanain
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +14,19 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Cek apakah token sudah ada
+        val sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE)
+        val token = sharedPreferences.getString("TOKEN", null)
+
+        if (token.isNullOrEmpty()) {
+            // Jika token tidak ada, kembali ke LoginActivity
+            val loginIntent = Intent(this, LoginActivity::class.java)
+            startActivity(loginIntent)
+            finish() // Tutup MainActivity
+            return
+        }
+
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -23,10 +37,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.menuHome -> replaceFragment(HomeFragment())
                 R.id.menuSchedules -> replaceFragment(MyScheduleFragment())
                 R.id.menuProjects -> replaceFragment(ProjectListFragment())
-
-                else -> {
-                    replaceFragment(HomeFragment())
-                }
+                else -> replaceFragment(HomeFragment())
             }
             true
         }

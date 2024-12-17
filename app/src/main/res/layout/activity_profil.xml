@@ -45,18 +45,18 @@ tools:context=".profil.ProfilActivity">
         tools:ignore="MissingConstraints">
 
         <TextView
-            android:id="@+id/labelNamaLengkap"
+            android:id="@+id/tvName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppinssemibold"
-            android:text="untukNamaLengkap"
+            android:text="NamaLengkap"
             android:textSize="18sp"/>
 
         <TextView
-                android:id="@+id/labelEmail"
+                android:id="@+id/tvEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="untukEmail"
+            android:text="Email"
             android:textSize="18sp"/>
     </LinearLayout>
 

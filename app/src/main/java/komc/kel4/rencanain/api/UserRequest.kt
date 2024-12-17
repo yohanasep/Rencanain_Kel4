@@ -1,4 +1,4 @@
-package komc.kel4.rencanain
+package komc.kel4.rencanain.api
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName

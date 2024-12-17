@@ -1,6 +1,5 @@
-package komc.kel4.rencanain
+package komc.kel4.rencanain.api
 
-import com.google.gson.GsonBuilder
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -8,14 +7,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class Retro {
-//    fun getRetroClientInstance(): Retrofit {
-//        val gson = GsonBuilder().setLenient().create()
-//        return Retrofit.Builder()
-//            .baseUrl("http://192.168.125.165:8000/api/")
-//            .addConverterFactory(GsonConverterFactory.create(gson))
-//            .build()
-//    }
-
     fun getRetroClientInstance(token: String? = null): Retrofit {
         val clientBuilder = OkHttpClient.Builder()
 
@@ -30,7 +21,7 @@ class Retro {
         }
 
         return Retrofit.Builder()
-            .baseUrl("http://192.168.244.165:8000/api/")
+            .baseUrl("http://192.168.125.165:8000/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(clientBuilder.build())
             .build()

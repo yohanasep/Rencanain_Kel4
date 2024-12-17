@@ -11,27 +11,78 @@ import androidx.core.view.WindowInsetsCompat
 import komc.kel4.rencanain.LoginActivity
 import komc.kel4.rencanain.MainActivity
 import komc.kel4.rencanain.R
+import komc.kel4.rencanain.api.Retro
+import komc.kel4.rencanain.api.UserApi
+import komc.kel4.rencanain.api.UserResponse
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class ProfilActivity : AppCompatActivity() {
+    private lateinit var tvName: TextView
+    private lateinit var tvEmail: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_profil)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
+        // Initialize Views
         val btnBack = findViewById<ImageButton>(R.id.btnBack)
+        val btnLogout = findViewById<TextView>(R.id.btnLogout)
+        tvName = findViewById(R.id.tvName)
+        tvEmail = findViewById(R.id.tvEmail)
+
         btnBack.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
-
-        val btnLogout = findViewById<TextView>(R.id.btnLogout)
         btnLogout.setOnClickListener {
+            logout()
+        }
+
+        // Fetch User Profile
+        dataUserProfile()
+    }
+
+    private fun dataUserProfile() {
+        // Ambil token dari SharedPreferences
+        val sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE)
+        val token = sharedPreferences.getString("TOKEN", null)
+
+        if (token != null) {
+            // Retrofit instance
+            val retrofit = Retro().getRetroClientInstance()
+            val userApi = retrofit.create(UserApi::class.java)
+
+            // Call API
+            userApi.userProfile("Bearer $token").enqueue(object : Callback<UserResponse> {
+                override fun onResponse(
+                    call: Call<UserResponse>,
+                    response: Response<UserResponse>
+                ) {
+                    if (response.isSuccessful) {
+                        val user = response.body()?.data
+                        tvName.text = user?.name ?: "Nama tidak ditemukan"
+                        tvEmail.text = user?.email ?: "Email tidak ditemukan"
+                    } else {
+                        println("Gagal mengambil data profile: ${response.message()}")
+                    }
+                }
+
+                override fun onFailure(call: Call<UserResponse>, t: Throwable) {
+                    println("Error: ${t.message}")
+                }
+            })
+        } else {
+            println("Token tidak ditemukan, harap login kembali.")
             logout()
         }
     }

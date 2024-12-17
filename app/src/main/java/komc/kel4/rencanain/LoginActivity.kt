@@ -7,7 +7,10 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import komc.kel4.rencanain.databinding.ActivityMainBinding
+import komc.kel4.rencanain.api.Retro
+import komc.kel4.rencanain.api.UserApi
+import komc.kel4.rencanain.api.UserRequest
+import komc.kel4.rencanain.api.UserResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

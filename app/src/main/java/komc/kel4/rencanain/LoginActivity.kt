@@ -56,6 +56,7 @@ class LoginActivity : AppCompatActivity() {
                     val token = user?.token
 
                     if (token != null) {
+                        Toast.makeText(this@LoginActivity, "Login berhasil!", Toast.LENGTH_SHORT).show()
                         // Simpan token di SharedPreferences
                         val sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE)
                         val editor = sharedPreferences.edit()

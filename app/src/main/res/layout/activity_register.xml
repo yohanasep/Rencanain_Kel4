@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:theme="@style/Theme.Rencanain"
-    android:padding="20dp"
+    android:layout_margin="20dp"
     tools:context=".RegisterActivity">
 
     <LinearLayout

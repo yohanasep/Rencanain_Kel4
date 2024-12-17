@@ -11,5 +11,4 @@ class UserRequest {
     @SerializedName("password")
     @Expose
     var password: String? = null
-
 }

@@ -22,28 +22,12 @@
             android:layout_gravity="center"
             android:textSize="20sp" />
 
-        <!-- Card view for Jadwal 1 -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView"
+        <ListView
+            android:id="@+id/lvSchedule"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/myScheduleList"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Jadwal 1"
-                    android:textSize="14sp" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+            android:layout_height="528dp"
+            android:padding="20dp"
+            tools:listitem="@layout/row_schedule" />
     </LinearLayout>
 
     <!-- Floating Button ke Tambah Jadwal -->

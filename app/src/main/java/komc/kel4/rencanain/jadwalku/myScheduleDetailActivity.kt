@@ -2,6 +2,7 @@ package komc.kel4.rencanain.jadwalku
 
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.ListView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -18,7 +19,6 @@ class myScheduleDetailActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
     }
 
 }

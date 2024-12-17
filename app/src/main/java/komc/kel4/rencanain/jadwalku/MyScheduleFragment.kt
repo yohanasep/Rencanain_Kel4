@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ListView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import komc.kel4.rencanain.R
 import komc.kel4.rencanain.jadwalku.AddNewMyScheduleActivity
@@ -21,7 +22,18 @@ class MyScheduleFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        //  inflate layout
         val view = inflater.inflate(R.layout.fragment_my_schedule, container, false)
+
+        // list view personal schedule
+        val listView: ListView = view.findViewById<ListView>(R.id.lvSchedule)
+        val scheduleList = arrayOf(
+            "Jadwal 1",
+            "Jadwal 2",
+        )
+
+        val myScheduleAdapter = MyScheduleAdapter(requireContext(), scheduleList)
+        listView.adapter = myScheduleAdapter
 
         // button untuk pindah ke halaman add new schedule
         val btnGoAddNewSchedule = view.findViewById<View>(R.id.btnGoAddNewSchedule)

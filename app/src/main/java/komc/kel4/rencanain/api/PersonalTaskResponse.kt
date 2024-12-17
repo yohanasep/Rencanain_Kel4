@@ -14,7 +14,7 @@ data class PersonalTaskResponse(
 
     @SerializedName("data")
     @Expose
-    val data: List<PersonalTask> // Ubah jadi List karena 'data' bisa berisi banyak task
+    val data: List<PersonalTask>
 )
 
 data class PersonalTask(

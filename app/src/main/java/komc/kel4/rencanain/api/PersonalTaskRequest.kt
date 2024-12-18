@@ -6,25 +6,25 @@ import com.google.gson.annotations.SerializedName
 class PersonalTaskRequest {
     @SerializedName("nama_task")
     @Expose
-    val namaTask: String?,
+    val namaTask: String? = null
 
     @SerializedName("label")
     @Expose
-    val label: String?,
+    val label: String? = null
 
     @SerializedName("deskripsi")
     @Expose
-    val deskripsi: String?,
+    val deskripsi: String? = null
 
     @SerializedName("due_date")
     @Expose
-    val dueDate: String?,
+    val dueDate: String? = null
 
     @SerializedName("status")
     @Expose
-    val status: String?,
+    val status: String? = null
 
     @SerializedName("level_prioritas")
     @Expose
-    val levelPrioritas: String?
+    val levelPrioritas: String? = null
 }

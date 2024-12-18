@@ -20,8 +20,8 @@
 
     <!-- My Schedule Detail -->
     <string name="dueDateLabel">Tenggat</string>
-    <string name="labelTimer">Timer</string>
-    <string name="labelUlangi">Ulangi</string>
+    <string name="labelScheduleStatus">Status</string>
+    <string name="labelScheduleLevelPrioritas">Level Prioritas</string>
     <string name="labelDaftarJadwalku">Daftar Jadwalku</string>
     <string name="btnGoToAddSchedule">Tambah Jadwalku</string>
     <string name="labelForLabel">Label</string>
@@ -56,7 +56,6 @@
     <string name="labelScheduleName">Jadwal saya</string>
     <string name="labelScheduleDescription">Deskripsi</string>
     <string name="labelAddNewSchedule">Tambah jadwal</string>
-    <string name="labelScheduleDetail">Detail Jadwal</string>"
 
     <!-- Button Submit -->
     <string name="labelSubmit">Submit</string>

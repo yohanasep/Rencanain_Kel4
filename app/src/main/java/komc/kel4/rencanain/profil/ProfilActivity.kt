@@ -34,15 +34,9 @@ class ProfilActivity : AppCompatActivity() {
         }
 
         // Initialize Views
-        val btnBack = findViewById<ImageButton>(R.id.btnBack)
         val btnLogout = findViewById<TextView>(R.id.btnLogout)
         tvName = findViewById(R.id.tvName)
         tvEmail = findViewById(R.id.tvEmail)
-
-        btnBack.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
 
         btnLogout.setOnClickListener {
             logout()
@@ -93,6 +87,7 @@ class ProfilActivity : AppCompatActivity() {
         // Hapus token dari SharedPreferences
         val sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE)
         val editor = sharedPreferences.edit()
+
         editor.remove("TOKEN") // Hapus token
         editor.apply()
 

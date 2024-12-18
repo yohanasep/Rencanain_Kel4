@@ -56,6 +56,8 @@ class ProfilActivity : AppCompatActivity() {
         // Ambil token dari SharedPreferences
         val sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE)
         val token = sharedPreferences.getString("TOKEN", null)
+        println("Token saat ini: $token")
+
 
         if (token != null) {
             // Retrofit instance

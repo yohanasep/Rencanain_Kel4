@@ -63,7 +63,7 @@ class LoginActivity : AppCompatActivity() {
                         // Simpan token di SharedPreferences
                         val sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE)
                         val editor = sharedPreferences.edit()
-                        editor.putString("TOKEN", token)
+                        editor.putString("TOKEN", token) // Pastikan kuncinya konsisten
                         editor.apply()
 
                         // Navigasi ke MainActivity

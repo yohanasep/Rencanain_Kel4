@@ -3,25 +3,7 @@ package komc.kel4.rencanain.api
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class PersonalTaskResponse(
-    @SerializedName("status")
-    @Expose
-    val status: Boolean,
-
-    @SerializedName("message")
-    @Expose
-    val message: String,
-
-    @SerializedName("data")
-    @Expose
-    val data: List<PersonalTask>
-)
-
-data class PersonalTask(
-    @SerializedName("id_personal_task")
-    @Expose
-    val idPersonalTask: String?,
-
+class PersonalTaskRequest {
     @SerializedName("nama_task")
     @Expose
     val namaTask: String?,
@@ -45,4 +27,4 @@ data class PersonalTask(
     @SerializedName("level_prioritas")
     @Expose
     val levelPrioritas: String?
-)
+}

@@ -57,6 +57,9 @@
     <string name="labelScheduleDescription">Deskripsi</string>
     <string name="labelAddNewSchedule">Tambah jadwal</string>
 
+    <!-- Announcement -->
+    <string name="labelAnnouncement">Pengumuman</string>
+
     <!-- Button Submit -->
     <string name="labelSubmit">Submit</string>
 </resources>

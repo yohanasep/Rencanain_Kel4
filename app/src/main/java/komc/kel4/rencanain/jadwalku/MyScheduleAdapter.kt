@@ -8,15 +8,13 @@ import android.widget.BaseAdapter
 import android.widget.CheckBox
 import komc.kel4.rencanain.R
 
-
-class PersonalSchedule(val namaSchedule: String, val descSchedule: String, val status: String, val levelPrioritas: Int, val tenggat: String)
+class PersonalSchedule(val namaSchedule: String, val descSchedule: String, val status: String, val levelPrioritas: String, val tenggat: String)
 
 class MyScheduleAdapter(private val context: Context, private var scheduleList: MutableList<PersonalSchedule>) : BaseAdapter() {
 
     // Update data
     fun updateData(newScheduleList: List<PersonalSchedule>) {
-        scheduleList.clear()
-        scheduleList.addAll(newScheduleList)
+        scheduleList = newScheduleList.toMutableList()
         notifyDataSetChanged()
     }
 

@@ -35,15 +35,15 @@ class ProjectListFragment : Fragment() {
 
         ProjectsView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
             // Ambil data Project berdasarkan posisi yang diklik
-            val project = projects[position]
-
-            // Kirim data ke ProjectDetailActivity
-            val intent = Intent(requireContext(), ProjectDetailActivity::class.java).apply {
-                putExtra("title", project.title)
-                putExtra("deadline", project.deadline)
-                putExtra("progress", project.progress)
-            }
-
+//            val project = projects[position]
+//
+//            // Kirim data ke ProjectDetailActivity
+//            val intent = Intent(requireContext(), ProjectDetailActivity::class.java).apply {
+//                putExtra("title", project.title)
+//                putExtra("deadline", project.deadline)
+//                putExtra("progress", project.progress)
+//            }
+            val intent = Intent(activity, ProjectDetailActivity::class.java)
             startActivity(intent)
         }
 

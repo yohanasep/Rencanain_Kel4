@@ -7,16 +7,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.ListView
 import android.widget.Toast
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import komc.kel4.rencanain.R
-import komc.kel4.rencanain.workspace.ProjectDetailActivity
-import komc.kel4.rencanain.jadwalku.AddNewMyScheduleActivity
 import komc.kel4.rencanain.api.*
 
 
@@ -37,8 +33,6 @@ class MyScheduleFragment : Fragment() {
 
         adapter = MyScheduleAdapter(requireContext(), scheduleList)
         SchedulesView.adapter = adapter
-
-        daftarPersonalTasks()
 
 //        SchedulesView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
 //            // Ambil data Project berdasarkan posisi yang diklik
@@ -63,6 +57,8 @@ class MyScheduleFragment : Fragment() {
             startActivity(intent)
         }
 
+        daftarPersonalTasks()
+
         return view
     }
 
@@ -84,15 +80,13 @@ class MyScheduleFragment : Fragment() {
                 if (response.isSuccessful && response.body() != null) {
                     val tasks = response.body()!!.data
 
-                    // Pastikan properti tasks di-mapping dengan benar ke namaTask
-                    // Mengubah mapping data agar sesuai dengan objek PersonalSchedule
                     adapter.updateData(
                         tasks.map {
                             PersonalSchedule(
                                 namaSchedule = it.namaTask ?: "Unnamed Task",
                                 descSchedule = it.deskripsi ?: "No Description",
                                 status = it.status ?: "Unknown Status",
-                                levelPrioritas = 0, // Sesuaikan angka sesuai prioritas
+                                levelPrioritas = it.levelPrioritas ?: "Unknown",
                                 tenggat = it.dueDate ?: "No Due Date"
                             )
                         }

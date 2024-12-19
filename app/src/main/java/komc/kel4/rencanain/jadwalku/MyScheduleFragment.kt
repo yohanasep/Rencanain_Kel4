@@ -34,16 +34,7 @@ class MyScheduleFragment : Fragment() {
         adapter = MyScheduleAdapter(requireContext(), scheduleList)
         SchedulesView.adapter = adapter
 
-        // Handle item click to navigate to detail activity
-        SchedulesView.setOnItemClickListener { _, _, position, _ ->
-            val selectedTask = scheduleList[position]
-            val intent = Intent(activity, myScheduleDetailActivity::class.java).apply {
-                putExtra("id", selectedTask.idSchedule.toInt())
-            }
-            startActivity(intent)
-        }
-
-        // Load personal tasks
+                // Load personal tasks
         daftarPersonalTasks()
 
         return view

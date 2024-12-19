@@ -20,11 +20,5 @@ class AddNewProjectActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        val btnBack = findViewById<ImageButton>(R.id.btnBack)
-        btnBack.setOnClickListener {
-            val intent = Intent(this, ProjectListFragment::class.java)
-            startActivity(intent)
-        }
     }
 }

@@ -9,40 +9,55 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ListView
 import android.widget.Toast
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import komc.kel4.rencanain.R
-import komc.kel4.rencanain.jadwalku.AddNewMyScheduleActivity
 import komc.kel4.rencanain.api.*
 
 
 class MyScheduleFragment : Fragment() {
     private lateinit var scheduleListView: ListView
     private lateinit var adapter: MyScheduleAdapter
-    private val scheduleList = mutableListOf<String>()
+    private val scheduleList = mutableListOf<PersonalSchedule>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        //  inflate layout
         val view = inflater.inflate(R.layout.fragment_my_schedule, container, false)
 
-        // inisialisasi ListView
-        scheduleListView = view.findViewById(R.id.lvSchedule)
-        adapter = MyScheduleAdapter(requireContext(), scheduleList.toTypedArray())
-        scheduleListView.adapter = adapter
+        // list view personal schedule
+        val SchedulesView: ListView = view.findViewById(R.id.lvSchedule)
 
-        // function untuk menampilkan personal task
-        daftarPersonalTasks()
+        adapter = MyScheduleAdapter(requireContext(), scheduleList)
+        SchedulesView.adapter = adapter
 
-        // Floating button action
-        val btnGoAddNewSchedule = view.findViewById<FloatingActionButton>(R.id.btnGoAddNewSchedule)
+//        SchedulesView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
+//            // Ambil data Project berdasarkan posisi yang diklik
+//            val schedule = scheduleList[position]
+//
+//            // Kirim data ke ProjectDetailActivity
+//            val intent = Intent(requireContext(), ProjectDetailActivity::class.java).apply {
+//                putExtra("namaSchedule", schedule.namaSchedule)
+//                putExtra("descSchedule", schedule.descSchedule)
+//                putExtra("status", schedule.status)
+//                putExtra("levelPrioritas", schedule.levelPrioritas)
+//                putExtra("tenggat", schedule.tenggat)
+//            }
+//
+//            startActivity(intent)
+//        }
+
+        // button untuk pindah ke halaman add new schedule
+        val btnGoAddNewSchedule = view.findViewById<View>(R.id.btnGoAddNewSchedule)
         btnGoAddNewSchedule.setOnClickListener {
             val intent = Intent(activity, AddNewMyScheduleActivity::class.java)
             startActivity(intent)
         }
+
+        daftarPersonalTasks()
 
         return view
     }
@@ -64,9 +79,20 @@ class MyScheduleFragment : Fragment() {
             override fun onResponse(call: Call<PersonalTaskResponse>, response: Response<PersonalTaskResponse>) {
                 if (response.isSuccessful && response.body() != null) {
                     val tasks = response.body()!!.data
-                    adapter.updateData(tasks.map { it.namaTask ?: "Unnamed Task" }.toTypedArray())
+
+                    adapter.updateData(
+                        tasks.map {
+                            PersonalSchedule(
+                                namaSchedule = it.namaTask ?: "Unnamed Task",
+                                descSchedule = it.deskripsi ?: "No Description",
+                                status = it.status ?: "Unknown Status",
+                                levelPrioritas = it.levelPrioritas ?: "Unknown",
+                                tenggat = it.dueDate ?: "No Due Date"
+                            )
+                        }
+                    )
+
                     println("Response code: ${response.code()}")
-                    println("Masuk ke onResponse: ${response.isSuccessful}")
                     println("Data yang diterima: ${response.body()?.data}")
                 } else {
                     Toast.makeText(requireContext(), "Gagal memuat data", Toast.LENGTH_SHORT).show()

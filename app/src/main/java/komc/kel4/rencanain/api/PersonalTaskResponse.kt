@@ -26,10 +26,6 @@ data class PersonalTask(
     @Expose
     val namaTask: String?,
 
-    @SerializedName("label")
-    @Expose
-    val label: String?,
-
     @SerializedName("deskripsi")
     @Expose
     val deskripsi: String?,

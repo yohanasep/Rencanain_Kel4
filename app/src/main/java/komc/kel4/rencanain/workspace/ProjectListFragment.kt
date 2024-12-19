@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ListView
 import komc.kel4.rencanain.R
 
@@ -20,7 +21,7 @@ class ProjectListFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_project_list, container, false)
 
-        val listView: ListView = view.findViewById<ListView>(R.id.lvProject)
+        val ProjectsView: ListView = view.findViewById<ListView>(R.id.lvProject)
 
         val projects = listOf(
             Project("Project A", "10 Jan 2024", 60),
@@ -30,8 +31,21 @@ class ProjectListFragment : Fragment() {
 
         // Atur adapter
         val projectAdapter = ProjectAdapter(requireContext(), projects)
-        listView.adapter = projectAdapter
+        ProjectsView.adapter = projectAdapter
 
+        ProjectsView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
+            // Ambil data Project berdasarkan posisi yang diklik
+//            val project = projects[position]
+//
+//            // Kirim data ke ProjectDetailActivity
+//            val intent = Intent(requireContext(), ProjectDetailActivity::class.java).apply {
+//                putExtra("title", project.title)
+//                putExtra("deadline", project.deadline)
+//                putExtra("progress", project.progress)
+//            }
+            val intent = Intent(activity, ProjectDetailActivity::class.java)
+            startActivity(intent)
+        }
 
         // button untuk pindah ke halaman add new project
         val btnGoAddNewProject = view.findViewById<View>(R.id.btnGoAddNewProject)

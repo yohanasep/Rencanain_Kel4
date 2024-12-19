@@ -9,27 +9,15 @@
     tools:context=".workspace.AddNewProjectActivity"
     android:layout_margin="20dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/labelProjectTitle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <ImageButton
-            android:id="@+id/btnBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/background_color_LM"
-            android:layout_marginBottom="10dp"
-            android:layout_marginEnd="10dp"
-            app:srcCompat="@drawable/baseline_arrow_back_24" />
-
-        <TextView
-            android:id="@+id/labelProjectTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:textSize="16sp"
-            android:text="@string/labelAddNewProject"/>
-    </LinearLayout>
+        android:layout_marginBottom="15dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:text="@string/labelAddNewProject"/>
 
     <TextView
         android:id="@+id/labelProjectName"

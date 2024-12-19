@@ -7,34 +7,18 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
     android:orientation="vertical"
     android:theme="@style/Theme.Rencanain"
+    android:padding="20dp"
 tools:context=".profil.ProfilActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
+    <TextView
+        android:id="@+id/labelProfile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="20dp"
-        android:layout_marginBottom="50dp"
-        tools:ignore="MissingConstraints">
-
-        <ImageButton
-            android:id="@+id/btnBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/background_color_LM"
-            app:srcCompat="@drawable/baseline_arrow_back_24" />
-
-        <TextView
-            android:id="@+id/labelProfile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:text="@string/labelProfile"
-            android:textSize="16sp" />
-    </LinearLayout>
+        android:text="@string/labelProfile"
+        android:textSize="18sp"
+        android:layout_marginStart="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -49,14 +33,14 @@ tools:context=".profil.ProfilActivity">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppinssemibold"
-            android:text="NamaLengkap"
+            android:text=""
             android:textSize="18sp"/>
 
         <TextView
                 android:id="@+id/tvEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Email"
+            android:text=""
             android:textSize="18sp"/>
     </LinearLayout>
 

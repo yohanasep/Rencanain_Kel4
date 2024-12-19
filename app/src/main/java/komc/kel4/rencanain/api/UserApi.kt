@@ -3,10 +3,12 @@ package komc.kel4.rencanain.api
 import retrofit2.Call
 import retrofit2.http.Header
 import retrofit2.http.Body
+import retrofit2.http.Path
 import retrofit2.http.POST
 import retrofit2.http.GET
 import retrofit2.http.PUT
 import retrofit2.http.DELETE
+
 
 interface UserApi {
     // PROFILE //
@@ -32,6 +34,22 @@ interface UserApi {
     // tambah personal task endpoint
     @POST("personaltask")
     fun tambahPersonalTasks(
+        @Header("Authorization") token: String,
         @Body personalTaskRequest: PersonalTaskRequest
     ): Call<PersonalTaskResponse>
+
+    // detail personal task endpoint
+    @GET("personaltask/{id}")
+    fun detailPersonalTasks(
+        @Header("Authorization") token: String,
+        @Path("id") id: Int
+    ): Call<PersonalTaskResponse>
+
+    // WORKSPACE //
+    // daftar workspace endpoint
+    @GET("workspaces")
+    fun daftarWorkspace(
+        @Header("Authorization") token: String
+    ): Call<WorkspaceResponse>
+
 }

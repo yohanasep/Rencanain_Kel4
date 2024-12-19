@@ -7,11 +7,27 @@
     android:theme="@style/Theme.Rencanain"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <CheckBox
-        android:id="@+id/myScheduleList"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="untukNamaJadwal"
-        android:textSize="14sp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/myScheduleList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="untukjudul" />
+
+        <TextView
+            android:id="@+id/personalTaskStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="untukstatus" />
+
+    </LinearLayout>
+
 
 </LinearLayout>

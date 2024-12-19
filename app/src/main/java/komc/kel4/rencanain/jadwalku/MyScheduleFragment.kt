@@ -25,38 +25,25 @@ class MyScheduleFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        //  inflate layout
+        // Inflate layout
         val view = inflater.inflate(R.layout.fragment_my_schedule, container, false)
 
-        // list view personal schedule
+        // List view personal schedule
         val SchedulesView: ListView = view.findViewById(R.id.lvSchedule)
 
         adapter = MyScheduleAdapter(requireContext(), scheduleList)
         SchedulesView.adapter = adapter
 
-//        SchedulesView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
-//            // Ambil data Project berdasarkan posisi yang diklik
-//            val schedule = scheduleList[position]
-//
-//            // Kirim data ke ProjectDetailActivity
-//            val intent = Intent(requireContext(), ProjectDetailActivity::class.java).apply {
-//                putExtra("namaSchedule", schedule.namaSchedule)
-//                putExtra("descSchedule", schedule.descSchedule)
-//                putExtra("status", schedule.status)
-//                putExtra("levelPrioritas", schedule.levelPrioritas)
-//                putExtra("tenggat", schedule.tenggat)
-//            }
-//
-//            startActivity(intent)
-//        }
-
-        // button untuk pindah ke halaman add new schedule
-        val btnGoAddNewSchedule = view.findViewById<View>(R.id.btnGoAddNewSchedule)
-        btnGoAddNewSchedule.setOnClickListener {
-            val intent = Intent(activity, AddNewMyScheduleActivity::class.java)
+        // Handle item click to navigate to detail activity
+        SchedulesView.setOnItemClickListener { _, _, position, _ ->
+            val selectedTask = scheduleList[position]
+            val intent = Intent(activity, myScheduleDetailActivity::class.java).apply {
+                putExtra("id", selectedTask.idSchedule.toInt())
+            }
             startActivity(intent)
         }
 
+        // Load personal tasks
         daftarPersonalTasks()
 
         return view
@@ -83,6 +70,7 @@ class MyScheduleFragment : Fragment() {
                     adapter.updateData(
                         tasks.map {
                             PersonalSchedule(
+                                idSchedule = it.idPersonalTask ?: "Unknown ID",
                                 namaSchedule = it.namaTask ?: "Unnamed Task",
                                 descSchedule = it.deskripsi ?: "No Description",
                                 status = it.status ?: "Unknown Status",
@@ -104,5 +92,4 @@ class MyScheduleFragment : Fragment() {
             }
         })
     }
-
 }

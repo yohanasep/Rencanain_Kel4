@@ -28,12 +28,6 @@ class AddNewMyScheduleActivity : AppCompatActivity() {
             insets
         }
 
-        val btnBack = findViewById<ImageButton>(R.id.btnBack)
-        btnBack.setOnClickListener {
-            val intent = Intent(this, MyScheduleFragment::class.java)
-            startActivity(intent)
-        }
-
     }
 
     private fun tambahPersonalTasks() {

@@ -28,4 +28,10 @@ interface UserApi {
     fun daftarPersonalTasks(
         @Header("Authorization") token: String
     ): Call<PersonalTaskResponse>
+
+    // tambah personal task endpoint
+    @POST("personaltask")
+    fun tambahPersonalTasks(
+        @Body personalTaskRequest: PersonalTaskRequest
+    ): Call<PersonalTaskResponse>
 }

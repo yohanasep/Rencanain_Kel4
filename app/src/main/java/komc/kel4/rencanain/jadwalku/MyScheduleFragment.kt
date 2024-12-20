@@ -34,8 +34,22 @@ class MyScheduleFragment : Fragment() {
         adapter = MyScheduleAdapter(requireContext(), scheduleList)
         SchedulesView.adapter = adapter
 
-        // Load personal tasks
-        daftarPersonalTasks()
+//        SchedulesView.onItemClickListener = SchedulesView.adapter.OnItemClickListener { _, _, position, _ ->
+//            // Ambil data Project berdasarkan posisi yang diklik
+//            if (position < scheduleList.size) {
+//                val schedule = scheduleList[position]
+//                // Lanjutkan dengan intent
+//                val intent = Intent(requireContext(), myScheduleDetailActivity::class.java).apply {
+//                    putExtra("namaSchedule", schedule.namaSchedule)
+//                    putExtra("descSchedule", schedule.descSchedule)
+//                    putExtra("status", schedule.status)
+//                    putExtra("levelPrioritas", schedule.levelPrioritas)
+//                    putExtra("tenggat", schedule.tenggat)
+//                }
+//
+//                startActivity(intent)
+//            }
+//        }
 
         // button untuk pindah ke halaman add new schedule
         val btnGoAddNewSchedule = view.findViewById<View>(R.id.btnGoAddNewSchedule)
@@ -43,6 +57,9 @@ class MyScheduleFragment : Fragment() {
             val intent = Intent(activity, AddNewMyScheduleActivity::class.java)
             startActivity(intent)
         }
+
+        daftarPersonalTasks()
+
         return view
     }
 
@@ -92,9 +109,6 @@ class MyScheduleFragment : Fragment() {
             override fun onFailure(call: Call<PersonalTaskResponse>, t: Throwable) {
                 Toast.makeText(requireContext(), "Kesalahan koneksi: ${t.message}", Toast.LENGTH_SHORT).show()
             }
-
-
-
         })
     }
 }

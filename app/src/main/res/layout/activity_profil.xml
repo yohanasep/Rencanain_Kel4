@@ -25,6 +25,7 @@ tools:context=".profil.ProfilActivity">
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
+        android:layout_marginTop="20dp"
         android:paddingHorizontal="20dp"
         tools:ignore="MissingConstraints">
 

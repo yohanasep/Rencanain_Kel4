@@ -26,7 +26,7 @@ class myScheduleDetailActivity : AppCompatActivity() {
             val namaSchedule = intent.getStringExtra("namaSchedule")
             val descSchedule = intent.getStringExtra("descSchedule")
             val status = intent.getStringExtra("status")
-            val levelPrioritas = intent.getIntExtra("levelPrioritas", -1)
+            val levelPrioritas = intent.getStringExtra("levelPrioritas")
             val tenggat = intent.getStringExtra("tenggat")
 
             val labelNamaSchedule = findViewById<TextView>(R.id.labelScheduleName)

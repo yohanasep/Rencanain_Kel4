@@ -6,8 +6,6 @@ import retrofit2.http.Body
 import retrofit2.http.Path
 import retrofit2.http.POST
 import retrofit2.http.GET
-import retrofit2.http.PUT
-import retrofit2.http.DELETE
 
 
 interface UserApi {
@@ -16,6 +14,12 @@ interface UserApi {
     @POST("login")
     fun login(
         @Body userRequest: UserRequest
+    ): Call<UserResponse>
+
+    // register endpoint
+    @POST("register")
+    fun register(
+        @Body registerRequest: RegisterRequest
     ): Call<UserResponse>
 
     // userprofile endpoint

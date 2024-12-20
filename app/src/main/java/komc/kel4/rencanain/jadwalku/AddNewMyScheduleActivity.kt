@@ -2,6 +2,7 @@ package komc.kel4.rencanain.jadwalku
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.activity.enableEdgeToEdge
@@ -120,8 +121,7 @@ class AddNewMyScheduleActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<PersonalTaskResponse>, t: Throwable) {
-                println("Error: ${t.message}")
-                Toast.makeText(this@AddNewMyScheduleActivity, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
+                Log.d("AddNewMyScheduleActivity", "Error: ${t.message}")
             }
         })
     }

@@ -52,4 +52,11 @@ interface UserApi {
         @Header("Authorization") token: String
     ): Call<WorkspaceResponse>
 
+    // tambah workspace endpoint
+    @POST("workspaces")
+    fun tambahWorkspace(
+        @Header("Authorization") token: String,
+        @Body workspaceRequest: WorkspaceRequest
+    ): Call<WorkspaceResponse>
+
 }

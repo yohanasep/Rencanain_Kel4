@@ -15,6 +15,7 @@ class Retro {
                 val request: Request = chain.request().newBuilder()
                     .addHeader("Authorization", "Bearer $token")
                     .build()
+                println("Request: ${request.url}, Headers: ${request.headers}, Body: ${request.body}")
                 chain.proceed(request)
             }
             clientBuilder.addInterceptor(authInterceptor)

@@ -14,6 +14,8 @@ import retrofit2.Callback
 import retrofit2.Response
 import komc.kel4.rencanain.R
 import komc.kel4.rencanain.api.*
+import komc.kel4.rencanain.utils.MyScheduleHelper
+import komc.kel4.rencanain.utils.WorkspaceHelper
 
 
 class MyScheduleFragment : Fragment() {
@@ -34,8 +36,22 @@ class MyScheduleFragment : Fragment() {
         adapter = MyScheduleAdapter(requireContext(), scheduleList)
         SchedulesView.adapter = adapter
 
-        // Load personal tasks
-        daftarPersonalTasks()
+//        SchedulesView.onItemClickListener = SchedulesView.adapter.OnItemClickListener { _, _, position, _ ->
+//            // Ambil data Project berdasarkan posisi yang diklik
+//            if (position < scheduleList.size) {
+//                val schedule = scheduleList[position]
+//                // Lanjutkan dengan intent
+//                val intent = Intent(requireContext(), myScheduleDetailActivity::class.java).apply {
+//                    putExtra("namaSchedule", schedule.namaSchedule)
+//                    putExtra("descSchedule", schedule.descSchedule)
+//                    putExtra("status", schedule.status)
+//                    putExtra("levelPrioritas", schedule.levelPrioritas)
+//                    putExtra("tenggat", schedule.tenggat)
+//                }
+//
+//                startActivity(intent)
+//            }
+//        }
 
         // button untuk pindah ke halaman add new schedule
         val btnGoAddNewSchedule = view.findViewById<View>(R.id.btnGoAddNewSchedule)
@@ -43,6 +59,9 @@ class MyScheduleFragment : Fragment() {
             val intent = Intent(activity, AddNewMyScheduleActivity::class.java)
             startActivity(intent)
         }
+
+        daftarPersonalTasks()
+
         return view
     }
 
@@ -54,47 +73,15 @@ class MyScheduleFragment : Fragment() {
     private fun daftarPersonalTasks() {
         val sharedPreferences = requireContext().getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
         val token = sharedPreferences.getString("TOKEN", null)
-        println("Token saat ini: $token")
 
         if (token == null) {
             Toast.makeText(requireContext(), "Token tidak ditemukan", Toast.LENGTH_SHORT).show()
             return
         }
 
-        val retro = Retro().getRetroClientInstance(token)
-        val userApi = retro.create(UserApi::class.java)
-
-        userApi.daftarPersonalTasks("Bearer $token").enqueue(object : Callback<PersonalTaskResponse> {
-            override fun onResponse(call: Call<PersonalTaskResponse>, response: Response<PersonalTaskResponse>) {
-                if (response.isSuccessful && response.body() != null) {
-                    val tasks = response.body()!!.data
-
-                    adapter.updateData(
-                        tasks.map {
-                            PersonalSchedule(
-                                idSchedule = it.idPersonalTask ?: "Unknown ID",
-                                namaSchedule = it.namaTask ?: "Unnamed Task",
-                                descSchedule = it.deskripsi ?: "No Description",
-                                status = it.statusTask ?: "Unknown Status",
-                                levelPrioritas = it.levelPrioritasTask ?: "Unknown",
-                                tenggat = it.dueDate ?: "No Due Date"
-                            )
-                        }
-                    )
-
-                    println("Response code: ${response.code()}")
-                    println("Data yang diterima: ${response.body()?.data}")
-                } else {
-                    Toast.makeText(requireContext(), "Gagal memuat data", Toast.LENGTH_SHORT).show()
-                }
-            }
-
-            override fun onFailure(call: Call<PersonalTaskResponse>, t: Throwable) {
-                Toast.makeText(requireContext(), "Kesalahan koneksi: ${t.message}", Toast.LENGTH_SHORT).show()
-            }
-
-
-
-        })
+        val MyScheduleHelper = MyScheduleHelper()
+        MyScheduleHelper.daftarPersonalTasks(requireContext(), token) { tasks ->
+            adapter.updateData(tasks)
+        }
     }
 }

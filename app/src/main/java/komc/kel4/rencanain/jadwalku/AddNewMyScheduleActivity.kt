@@ -104,23 +104,24 @@ class AddNewMyScheduleActivity : AppCompatActivity() {
 
         userApi.tambahPersonalTasks("Bearer $token", taskRequest).enqueue(object : Callback<PersonalTaskResponse> {
             override fun onResponse(call: Call<PersonalTaskResponse>, response: Response<PersonalTaskResponse>) {
+                println("Response code: ${response.code()}")
+                println("Task Request: $taskRequest")
                 if (response.isSuccessful) {
                     Toast.makeText(this@AddNewMyScheduleActivity, "Berhasil menambahkan task!", Toast.LENGTH_SHORT)
                         .show()
-                    val tasks = response.body()
-                    println("Success: $tasks")
+                    println("Response body: ${response.body()}")
                     finish()
                 } else {
                     val errorMessage = response.errorBody()?.string() ?: "Gagal menambahkan task"
-                    println("Gagal: $errorMessage")
+                    println("Error: $errorMessage")
+                    println("Error response: ${response.errorBody()?.string()}")
                     Toast.makeText(this@AddNewMyScheduleActivity, "Gagal: $errorMessage", Toast.LENGTH_SHORT).show()
                 }
             }
 
             override fun onFailure(call: Call<PersonalTaskResponse>, t: Throwable) {
-                t.printStackTrace()
-                Toast.makeText(this@AddNewMyScheduleActivity, "Failure: ${t.message}", Toast.LENGTH_SHORT).show()
-                println("Failure: ${t.message}")
+                println("Error: ${t.message}")
+                Toast.makeText(this@AddNewMyScheduleActivity, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
             }
         })
     }

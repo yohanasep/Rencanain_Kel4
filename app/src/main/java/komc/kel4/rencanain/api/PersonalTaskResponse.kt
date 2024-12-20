@@ -36,9 +36,9 @@ data class PersonalTask(
 
     @SerializedName("status")
     @Expose
-    val status: String?,
+    val statusTask: String?,
 
     @SerializedName("level_prioritas")
     @Expose
-    val levelPrioritas: String?
+    val levelPrioritasTask: String?
 )

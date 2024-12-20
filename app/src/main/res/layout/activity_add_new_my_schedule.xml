@@ -1,122 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".jadwalku.AddNewMyScheduleActivity"
-    android:layout_margin="20dp">
-
-    <TextView
-        android:id="@+id/labelScheduleTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:text="@string/labelAddNewSchedule"/>
+    android:layout_margin="20dp"
+    tools:context=".jadwalku.AddNewMyScheduleActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginVertical="20dp">
+
         <TextView
-            android:id="@+id/labelScheduleName"
+            android:id="@+id/labelScheduleTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/labelScheduleName"
-            />
+            android:layout_marginTop="40dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="@string/labelAddNewSchedule"/>
 
-        <EditText
-            android:id="@+id/ETScheduleName"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:ems="10"
-            android:inputType="text" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingBottom="20dp">
-        <TextView
-            android:id="@+id/labelScheduleDescription"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/labelScheduleDescription"
-            />
+            android:orientation="vertical"
+            android:layout_marginVertical="20dp">
+            <TextView
+                android:id="@+id/labelScheduleName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/labelScheduleName"
+                />
 
-        <EditText
-            android:id="@+id/ETProjectDesc"
+            <EditText
+                android:id="@+id/ETScheduleName"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:ems="10"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:ems="10"
-            android:inputType="text" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingBottom="20dp">
-        <TextView
-            android:id="@+id/labelStatusSchedule"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/labelStatus"
-            />
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+            <TextView
+                android:id="@+id/labelScheduleDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/labelScheduleDescription"
+                />
 
-        <Spinner
-            android:id="@+id/spinnerStatusSchedule"
+            <EditText
+                android:id="@+id/ETProjectDesc"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:ems="10"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingBottom="20dp">
-        <TextView
-            android:id="@+id/labelLevelPrioritas"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/labelPriorityLevel"
-            />
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+            <TextView
+                android:id="@+id/labelStatusSchedule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/labelStatus"
+                />
 
-        <Spinner
-            android:id="@+id/spinnerLevelPrioritas"
+            <Spinner
+                android:id="@+id/spinnerStatusSchedule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </Spinner>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingBottom="20dp">
-        <TextView
-            android:id="@+id/labelTenggat"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/labelDueDate"
-            />
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+            <TextView
+                android:id="@+id/labelLevelPrioritas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/labelPriorityLevel"
+                />
 
-        <CalendarView
-            android:id="@+id/calendarView"
+            <Spinner
+                android:id="@+id/spinnerLevelPrioritas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </Spinner>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+            <TextView
+                android:id="@+id/labelTenggat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/labelDueDate"
+                />
+
+            <CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSubmitPersonalSchedule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/labelSubmit" />
+
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnSubmitPersonalSchedule"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/labelSubmit" />
-
-</LinearLayout>
+</ScrollView>

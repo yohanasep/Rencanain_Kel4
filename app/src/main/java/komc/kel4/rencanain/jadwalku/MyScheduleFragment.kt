@@ -34,9 +34,15 @@ class MyScheduleFragment : Fragment() {
         adapter = MyScheduleAdapter(requireContext(), scheduleList)
         SchedulesView.adapter = adapter
 
-                // Load personal tasks
+        // Load personal tasks
         daftarPersonalTasks()
 
+        // button untuk pindah ke halaman add new schedule
+        val btnGoAddNewSchedule = view.findViewById<View>(R.id.btnGoAddNewSchedule)
+        btnGoAddNewSchedule.setOnClickListener {
+            val intent = Intent(activity, AddNewMyScheduleActivity::class.java)
+            startActivity(intent)
+        }
         return view
     }
 
@@ -64,8 +70,8 @@ class MyScheduleFragment : Fragment() {
                                 idSchedule = it.idPersonalTask ?: "Unknown ID",
                                 namaSchedule = it.namaTask ?: "Unnamed Task",
                                 descSchedule = it.deskripsi ?: "No Description",
-                                status = it.status ?: "Unknown Status",
-                                levelPrioritas = it.levelPrioritas ?: "Unknown",
+                                status = it.statusTask ?: "Unknown Status",
+                                levelPrioritas = it.levelPrioritasTask ?: "Unknown",
                                 tenggat = it.dueDate ?: "No Due Date"
                             )
                         }

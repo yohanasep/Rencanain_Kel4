@@ -27,6 +27,8 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
+
+
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

@@ -46,6 +46,11 @@ class MyScheduleFragment : Fragment() {
         return view
     }
 
+    override fun onResume() {
+        super.onResume()
+        daftarPersonalTasks()
+    }
+
     private fun daftarPersonalTasks() {
         val sharedPreferences = requireContext().getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
         val token = sharedPreferences.getString("TOKEN", null)
@@ -87,6 +92,9 @@ class MyScheduleFragment : Fragment() {
             override fun onFailure(call: Call<PersonalTaskResponse>, t: Throwable) {
                 Toast.makeText(requireContext(), "Kesalahan koneksi: ${t.message}", Toast.LENGTH_SHORT).show()
             }
+
+
+
         })
     }
 }

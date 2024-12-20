@@ -14,7 +14,7 @@ class WorkspaceRequest {
 
     @SerializedName("status")
     @Expose
-    var status: String? = null
+    var statusWorkspace: String? = null
 
     @SerializedName("details")
     @Expose

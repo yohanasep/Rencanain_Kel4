@@ -23,8 +23,7 @@
         android:id="@+id/labelProjectName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/labelProjectName"
-        />
+        android:text="@string/labelProjectName" />
 
     <EditText
         android:id="@+id/ETProjectName"
@@ -37,8 +36,7 @@
         android:id="@+id/labelProjectDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/labelProjectDescription"
-        />
+        android:text="@string/labelProjectDescription" />
 
     <EditText
         android:id="@+id/ETProjectDesc"
@@ -56,16 +54,41 @@
             android:id="@+id/labelStatusProject"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/labelStatus"
-            />
+            android:text="@string/labelStatus" />
 
         <Spinner
             android:id="@+id/spinnerStatusProject"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
-    
+    <TextView
+        android:id="@+id/labelInviteMembers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Member" />
+
+    <LinearLayout
+        android:id="@+id/inviteMembersContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/ETInviteEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukkan Email"
+            android:inputType="textEmailAddress" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnAddMoreMembers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tambah Member"
+        android:layout_marginTop="10dp" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -76,6 +99,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/labelSubmit" />
-
 
 </LinearLayout>

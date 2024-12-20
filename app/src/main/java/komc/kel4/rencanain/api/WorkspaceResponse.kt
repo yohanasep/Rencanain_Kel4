@@ -1,5 +1,6 @@
 package komc.kel4.rencanain.api
 
+import com.google.gson.JsonElement
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
@@ -14,7 +15,7 @@ data class WorkspaceResponse(
 
     @SerializedName("data")
     @Expose
-    val data: List<Workspace>
+    val data: JsonElement
 )
 
 data class Workspace(
@@ -32,7 +33,7 @@ data class Workspace(
 
     @SerializedName("status")
     @Expose
-    val status: String?,
+    val statusWorkspace: String?,
 
     @SerializedName("creator")
     @Expose

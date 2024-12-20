@@ -1,6 +1,5 @@
 package komc.kel4.rencanain.jadwalku
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.*
@@ -8,11 +7,14 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import komc.kel4.rencanain.R
 import komc.kel4.rencanain.api.PersonalTaskResponse
 import komc.kel4.rencanain.api.PersonalTaskRequest
 import komc.kel4.rencanain.api.Retro
 import komc.kel4.rencanain.api.UserApi
+import komc.kel4.rencanain.api.WorkspaceResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -99,23 +101,31 @@ class AddNewMyScheduleActivity : AppCompatActivity() {
             return
         }
 
-        val retrofit = Retro().getRetroClientInstance()
-        val userApi = retrofit.create(UserApi::class.java)
+        val userApi = Retro().getRetroClientInstance(token).create(UserApi::class.java)
 
         userApi.tambahPersonalTasks("Bearer $token", taskRequest).enqueue(object : Callback<PersonalTaskResponse> {
             override fun onResponse(call: Call<PersonalTaskResponse>, response: Response<PersonalTaskResponse>) {
-                println("Response code: ${response.code()}")
-                println("Task Request: $taskRequest")
-                if (response.isSuccessful) {
-                    Toast.makeText(this@AddNewMyScheduleActivity, "Berhasil menambahkan task!", Toast.LENGTH_SHORT)
-                        .show()
-                    println("Response body: ${response.body()}")
+                if (response.isSuccessful && response.body()?.status == true) {
+                    val responseBody = response.body()
+                    val workspaceList = mutableListOf<PersonalTaskResponse>()
+
+                    responseBody?.data?.let { dataElement ->
+                        if (dataElement.isJsonArray) {
+                            val type = object : TypeToken<List<PersonalTaskResponse>>() {}.type
+                            workspaceList.addAll(Gson().fromJson(dataElement, type))
+                        } else if (dataElement.isJsonObject) {
+                            val personalTask = Gson().fromJson(dataElement, PersonalTaskResponse::class.java)
+                            workspaceList.add(personalTask)
+                        } else {
+                            println("Data element is neither JSON Array nor JSON Object")
+                        }
+                    }
+                    Toast.makeText(this@AddNewMyScheduleActivity, "Personal Task berhasil ditambahkan!", Toast.LENGTH_SHORT).show()
                     finish()
                 } else {
-                    val errorMessage = response.errorBody()?.string() ?: "Gagal menambahkan task"
+                    val errorMessage = response.errorBody()?.string() ?: "Personal Task menambahkan workspace"
                     println("Error: $errorMessage")
-                    println("Error response: ${response.errorBody()?.string()}")
-                    Toast.makeText(this@AddNewMyScheduleActivity, "Gagal: $errorMessage", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@AddNewMyScheduleActivity, errorMessage, Toast.LENGTH_LONG).show()
                 }
             }
 

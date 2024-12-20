@@ -2,6 +2,8 @@ package komc.kel4.rencanain.utils
 
 import android.content.Context
 import android.widget.Toast
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import komc.kel4.rencanain.api.*
 import komc.kel4.rencanain.jadwalku.PersonalSchedule
 import retrofit2.Call
@@ -21,14 +23,17 @@ class MyScheduleHelper {
         userApi.daftarPersonalTasks("Bearer $token").enqueue(object : Callback<PersonalTaskResponse> {
             override fun onResponse(call: Call<PersonalTaskResponse>, response: Response<PersonalTaskResponse>) {
                 if (response.isSuccessful && response.body() != null) {
-                    var tasks = response.body()!!.data
+                    var data = response.body()!!.data
 
-                    // Jika limit diberikan, batasi jumlah item
-                    if (limit != null) {
-                        tasks = tasks.take(limit)
-                    }
+                    // Parse the JSON data into a list of Workspace objects
+                    val gson = Gson()
+                    val workspaceType = object : TypeToken<List<PersonalTask>>() {}.type
+                    val tasks: List<PersonalTask> = gson.fromJson(data, workspaceType)
 
-                    callback(tasks.map {
+                    // Apply limit if provided
+                    val limitedTasks = if (limit != null) tasks.take(limit) else tasks
+
+                    callback(limitedTasks.map {
                         PersonalSchedule(
                             idSchedule = it.idPersonalTask ?: "Unknown ID",
                             namaSchedule = it.namaTask ?: "Unnamed Task",

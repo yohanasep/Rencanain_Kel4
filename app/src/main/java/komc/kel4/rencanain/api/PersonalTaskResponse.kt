@@ -1,5 +1,6 @@
 package komc.kel4.rencanain.api
 
+import com.google.gson.JsonElement
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
@@ -14,7 +15,7 @@ data class PersonalTaskResponse(
 
     @SerializedName("data")
     @Expose
-    val data: List<PersonalTask>
+    val data: JsonElement
 )
 
 data class PersonalTask(

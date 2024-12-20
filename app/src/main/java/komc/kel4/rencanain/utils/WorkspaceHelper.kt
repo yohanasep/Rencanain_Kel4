@@ -7,6 +7,8 @@ import komc.kel4.rencanain.workspace.myWorkspace
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
 class WorkspaceHelper {
     fun daftarWorkspace(context: Context, token: String, limit: Int? = null, callback: (List<myWorkspace>) -> Unit) {
@@ -21,18 +23,21 @@ class WorkspaceHelper {
         userApi.daftarWorkspace("Bearer $token").enqueue(object : Callback<WorkspaceResponse> {
             override fun onResponse(call: Call<WorkspaceResponse>, response: Response<WorkspaceResponse>) {
                 if (response.isSuccessful && response.body() != null) {
-                    var tasks = response.body()!!.data
+                    val data = response.body()!!.data
 
-                    // Jika limit diberikan, batasi jumlah item
-                    if (limit != null) {
-                        tasks = tasks.take(limit)
-                    }
+                    // Parse the JSON data into a list of Workspace objects
+                    val gson = Gson()
+                    val workspaceType = object : TypeToken<List<Workspace>>() {}.type
+                    val tasks: List<Workspace> = gson.fromJson(data, workspaceType)
 
-                    callback(tasks.map {
+                    // Apply limit if provided
+                    val limitedTasks = if (limit != null) tasks.take(limit) else tasks
+
+                    callback(limitedTasks.map {
                         myWorkspace(
                             idProjek = it.idProjek ?: "Unknown ID",
                             namaProjek = it.namaProjek ?: "Unknown Project",
-                            status = it.status ?: "Unknown Status"
+                            status = it.statusWorkspace ?: "Unknown Status"
                         )
                     })
                 } else {
@@ -46,3 +51,4 @@ class WorkspaceHelper {
         })
     }
 }
+

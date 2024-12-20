@@ -9,6 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import komc.kel4.rencanain.MainActivity
 import komc.kel4.rencanain.R
 import komc.kel4.rencanain.api.PersonalTaskResponse
 import komc.kel4.rencanain.api.PersonalTaskRequest
@@ -111,6 +112,10 @@ class AddNewMyScheduleActivity : AppCompatActivity() {
                     Toast.makeText(this@AddNewMyScheduleActivity, "Berhasil menambahkan task!", Toast.LENGTH_SHORT)
                         .show()
                     println("Response body: ${response.body()}")
+
+                    val intent = Intent(this@AddNewMyScheduleActivity, MainActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP // Menghapus activity lain di stack jika ada
+                    startActivity(intent)
                     finish()
                 } else {
                     val errorMessage = response.errorBody()?.string() ?: "Gagal menambahkan task"

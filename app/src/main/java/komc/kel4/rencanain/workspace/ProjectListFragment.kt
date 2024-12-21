@@ -53,4 +53,9 @@ class ProjectListFragment : Fragment() {
              adapter.updateData(tasks)
          }
     }
+
+    override fun onResume() {
+        super.onResume()
+        daftarWorkspace()
+    }
 }

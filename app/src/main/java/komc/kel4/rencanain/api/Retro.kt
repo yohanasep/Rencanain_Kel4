@@ -28,7 +28,7 @@ class Retro {
         }
 
         return Retrofit.Builder()
-            .baseUrl("http://192.168.8.165:8000/api/")
+            .baseUrl("http://192.168.8.51:8000/api/")
             .addConverterFactory(GsonConverterFactory.create(gson))
             .client(clientBuilder.build())
             .build()

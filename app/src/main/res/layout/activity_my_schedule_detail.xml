@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/Theme.Rencanain"
-    tools:context=".jadwalku.myScheduleDetailActivity">
+    tools:context=".jadwalku.MyScheduleDetailActivity">
 
 
     <LinearLayout
@@ -24,7 +24,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/scheduleName"
+                android:id="@+id/labelScheduleName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Nama Jadwal"
@@ -63,6 +63,7 @@
                 android:layout_weight="1"/>
 
             <TextView
+                android:id="@+id/labelTenggat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2024/10/27" />

@@ -52,7 +52,7 @@
             android:name=".workspace.MemberListActivity"
             android:exported="false" />
         <activity
-            android:name=".jadwalku.myScheduleDetailActivity"
+            android:name=".jadwalku.MyScheduleDetailActivity"
             android:exported="false" />
     </application>
 

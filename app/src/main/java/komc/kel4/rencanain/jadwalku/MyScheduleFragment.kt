@@ -3,6 +3,7 @@ package komc.kel4.rencanain.jadwalku
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -15,7 +16,6 @@ import retrofit2.Response
 import komc.kel4.rencanain.R
 import komc.kel4.rencanain.api.*
 import komc.kel4.rencanain.utils.MyScheduleHelper
-import komc.kel4.rencanain.utils.WorkspaceHelper
 
 
 class MyScheduleFragment : Fragment() {
@@ -36,22 +36,7 @@ class MyScheduleFragment : Fragment() {
         adapter = MyScheduleAdapter(requireContext(), scheduleList)
         SchedulesView.adapter = adapter
 
-//        SchedulesView.onItemClickListener = SchedulesView.adapter.OnItemClickListener { _, _, position, _ ->
-//            // Ambil data Project berdasarkan posisi yang diklik
-//            if (position < scheduleList.size) {
-//                val schedule = scheduleList[position]
-//                // Lanjutkan dengan intent
-//                val intent = Intent(requireContext(), myScheduleDetailActivity::class.java).apply {
-//                    putExtra("namaSchedule", schedule.namaSchedule)
-//                    putExtra("descSchedule", schedule.descSchedule)
-//                    putExtra("status", schedule.status)
-//                    putExtra("levelPrioritas", schedule.levelPrioritas)
-//                    putExtra("tenggat", schedule.tenggat)
-//                }
-//
-//                startActivity(intent)
-//            }
-//        }
+
 
         // button untuk pindah ke halaman add new schedule
         val btnGoAddNewSchedule = view.findViewById<View>(R.id.btnGoAddNewSchedule)

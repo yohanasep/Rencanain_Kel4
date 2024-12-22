@@ -10,25 +10,22 @@ import komc.kel4.rencanain.R
 
 class PersonalSchedule(val namaSchedule: String, val idSchedule: String, val descSchedule: String, val status: String, val levelPrioritas: String, val tenggat: String)
 
-class MyScheduleAdapter(private val context: Context, private var scheduleList: MutableList<PersonalSchedule>) : BaseAdapter() {
+class MyScheduleAdapter(
+    private val context: Context,
+    private var scheduleList: MutableList<PersonalSchedule>,
+    private val onItemClick: (PersonalSchedule) -> Unit
+) : BaseAdapter() {
 
-    // Update data
     fun updateData(newScheduleList: List<PersonalSchedule>) {
         scheduleList = newScheduleList.toMutableList()
         notifyDataSetChanged()
     }
 
-    override fun getCount(): Int {
-        return scheduleList.size
-    }
+    override fun getCount(): Int = scheduleList.size
 
-    override fun getItem(position: Int): Any {
-        return scheduleList[position]
-    }
+    override fun getItem(position: Int): Any = scheduleList[position]
 
-    override fun getItemId(position: Int): Long {
-        return position.toLong()
-    }
+    override fun getItemId(position: Int): Long = position.toLong()
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val view = convertView ?: LayoutInflater.from(context).inflate(R.layout.row_schedule, parent, false)
@@ -40,7 +37,13 @@ class MyScheduleAdapter(private val context: Context, private var scheduleList: 
         labelTitle.text = schedule.namaSchedule
         labelStatus.text = schedule.status
 
+        // Set onClick listener untuk item
+        view.setOnClickListener {
+            onItemClick(schedule) // Panggil callback dengan item yang diklik
+        }
+
         return view
     }
 }
+
 

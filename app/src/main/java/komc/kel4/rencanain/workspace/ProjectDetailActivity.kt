@@ -25,35 +25,10 @@ class ProjectDetailActivity : AppCompatActivity() {
             insets
         }
 
-        // Ambil objek Project dari intent
-//        val intent = this.intent
-//
-//        if(intent.extras != null) {
-//            val title = intent.getStringExtra("title")
-//            val deadline = intent.getStringExtra("deadline")
-//            val progress = intent.getIntExtra("progress", 0)
-//
-//            val labelTitle = findViewById<TextView>(R.id.labelProjectTitle)
-//            val labelDeadline = findViewById<TextView>(R.id.labelProjectDeadline)
-//            val progressBar = findViewById<ProgressBar>(R.id.progressBarProject)
-//
-//            labelTitle.text = title
-//            labelDeadline.text = deadline
-//            progressBar.progress = progress
-//        }
+        val namaProject = intent.getStringExtra("namaProject") ?: "N/A"
+        val status = intent.getStringExtra("status") ?: "N/A"
 
-        // btn announcement
-        val btnAnnouncement = findViewById<ImageButton>(R.id.btnAnnouncement)
-        btnAnnouncement.setOnClickListener {
-            val intent = Intent(this, AnnouncementActivity::class.java)
-            startActivity(intent)
-        }
-
-        // btn add subtask
-        val imgBtnAddProjectTask = findViewById<ImageButton>(R.id.imgBtnAddProjectTask)
-        imgBtnAddProjectTask.setOnClickListener {
-            val intent = Intent(this, AddSubTaskActivity::class.java)
-            startActivity(intent)
-        }
+        findViewById<TextView>(R.id.labelProjectTitle).text = namaProject
+        findViewById<TextView>(R.id.labelProjectStatus).text = status
     }
 }

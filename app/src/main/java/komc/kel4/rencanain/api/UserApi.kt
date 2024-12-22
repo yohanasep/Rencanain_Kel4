@@ -46,7 +46,7 @@ interface UserApi {
     @GET("personaltask/{id}")
     fun detailPersonalTasks(
         @Header("Authorization") token: String,
-        @Path("id") id: Int
+        @Path("id") id: String
     ): Call<PersonalTaskResponse>
 
     // WORKSPACE //

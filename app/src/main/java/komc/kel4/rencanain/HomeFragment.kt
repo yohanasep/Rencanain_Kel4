@@ -11,11 +11,13 @@ import android.widget.ListView
 import android.widget.Toast
 import androidx.fragment.app.FragmentManager
 import komc.kel4.rencanain.jadwalku.MyScheduleAdapter
+import komc.kel4.rencanain.jadwalku.MyScheduleDetailActivity
 import komc.kel4.rencanain.jadwalku.PersonalSchedule
 import komc.kel4.rencanain.profil.ProfilActivity
 import komc.kel4.rencanain.utils.MyScheduleHelper
 import komc.kel4.rencanain.utils.WorkspaceHelper
 import komc.kel4.rencanain.workspace.ProjectAdapter
+import komc.kel4.rencanain.workspace.ProjectDetailActivity
 import komc.kel4.rencanain.workspace.myWorkspace
 
 class HomeFragment : Fragment() {
@@ -37,12 +39,29 @@ class HomeFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
         val WorkspacesView: ListView = view.findViewById(R.id.lvProject_HOME)
-        projectAdapter = ProjectAdapter(requireContext(), projectList)
+        projectAdapter = ProjectAdapter(requireContext(), projectList) { project ->
+            val intent = Intent(requireContext(), ProjectDetailActivity::class.java).apply {
+                putExtra("namaProject", project.namaProjek)
+                putExtra("status", project.status)
+                // Tambahkan data lain sesuai kebutuhan
+            }
+            startActivity(intent)
+        }
         WorkspacesView.adapter = projectAdapter
 
         val PersonalScheduleView: ListView = view.findViewById(R.id.lvSchedule_HOME)
-        scheduleAdapter = MyScheduleAdapter(requireContext(), scheduleList)
+        scheduleAdapter = MyScheduleAdapter(requireContext(), scheduleList) { schedule ->
+            val intent = Intent(requireContext(), MyScheduleDetailActivity::class.java).apply {
+                putExtra("namaSchedule", schedule.namaSchedule)
+                putExtra("descSchedule", schedule.descSchedule)
+                putExtra("status", schedule.status)
+                putExtra("levelPrioritas", schedule.levelPrioritas)
+                putExtra("tenggat", schedule.tenggat)
+            }
+            startActivity(intent)
+        }
         PersonalScheduleView.adapter = scheduleAdapter
+
 
         // Find the button or clickable view
         val btnProfile = view.findViewById<View>(R.id.imgProfileHome)

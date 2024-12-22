@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.ListView
 import android.widget.Toast
 import komc.kel4.rencanain.R
+import komc.kel4.rencanain.jadwalku.MyScheduleDetailActivity
 import komc.kel4.rencanain.utils.WorkspaceHelper
 
 class ProjectListFragment : Fragment() {
@@ -21,13 +22,19 @@ class ProjectListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_project_list, container, false)
-
         val WorkspacesView: ListView = view.findViewById(R.id.lvProject)
 
-        adapter = ProjectAdapter(requireContext(), scheduleList)
+        adapter = ProjectAdapter(requireContext(), scheduleList) { project ->
+            val intent = Intent(requireContext(), ProjectDetailActivity::class.java).apply {
+                putExtra("namaProject", project.namaProjek)
+                putExtra("status", project.status)
+                // Tambahkan data lain sesuai kebutuhan
+            }
+            startActivity(intent)
+        }
+
         WorkspacesView.adapter = adapter
 
-        // Button untuk pindah ke halaman add new project
         val btnGoAddNewProject = view.findViewById<View>(R.id.btnGoAddNewProject)
         btnGoAddNewProject.setOnClickListener {
             val intent = Intent(activity, AddNewProjectActivity::class.java)
@@ -50,8 +57,8 @@ class ProjectListFragment : Fragment() {
 
         val workspaceHelper = WorkspaceHelper()
         workspaceHelper.daftarWorkspace(requireContext(), token) { tasks ->
-             adapter.updateData(tasks)
-         }
+            adapter.updateData(tasks)
+        }
     }
 
     override fun onResume() {

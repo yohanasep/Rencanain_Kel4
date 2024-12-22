@@ -10,7 +10,11 @@ import komc.kel4.rencanain.R
 
 class myWorkspace(val idProjek: String, val namaProjek: String, val status: String)
 
-class ProjectAdapter(private val context: Context, private var projectList: List<myWorkspace>) : BaseAdapter() {
+class ProjectAdapter(
+    private val context: Context,
+    private var projectList: List<myWorkspace>,
+    private val onItemClick: (myWorkspace) -> Unit
+) : BaseAdapter() {
 
     // Update data
     fun updateData(newWorkspaceList: List<myWorkspace>) {
@@ -39,6 +43,10 @@ class ProjectAdapter(private val context: Context, private var projectList: List
 
         labelTitle.text = project.namaProjek
         labelStatus.text = project.status
+
+        view.setOnClickListener {
+            onItemClick(project) // Callback untuk klik item
+        }
 
         return view
     }

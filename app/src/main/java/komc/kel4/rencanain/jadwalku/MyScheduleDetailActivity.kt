@@ -13,25 +13,19 @@ class MyScheduleDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_my_schedule_detail)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
 
         // Ambil data dari Intent
-        val namaSchedule = intent.getStringExtra("namaSchedule")
-        val descSchedule = intent.getStringExtra("descSchedule")
-        val status = intent.getStringExtra("status")
-        val levelPrioritas = intent.getStringExtra("levelPrioritas")
-        val tenggat = intent.getStringExtra("tenggat")
+        val namaSchedule = intent.getStringExtra("namaSchedule") ?: "N/A"
+        val descSchedule = intent.getStringExtra("descSchedule") ?: "N/A"
+        val status = intent.getStringExtra("status") ?: "N/A"
+        val levelPrioritas = intent.getStringExtra("levelPrioritas") ?: "N/A"
+        val tenggat = intent.getStringExtra("tenggat") ?: "N/A"
 
-        // Tampilkan data di TextView atau elemen lainnya
+        // Tampilkan data di TextView
         findViewById<TextView>(R.id.labelScheduleName).text = namaSchedule
         findViewById<TextView>(R.id.labelScheduleDescription).text = descSchedule
         findViewById<TextView>(R.id.labelStatus).text = status
         findViewById<TextView>(R.id.labelLevelPrioritas).text = levelPrioritas
         findViewById<TextView>(R.id.labelTenggat).text = tenggat
     }
-
 }

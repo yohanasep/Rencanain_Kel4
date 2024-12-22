@@ -27,26 +27,24 @@ class MyScheduleFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate layout
         val view = inflater.inflate(R.layout.fragment_my_schedule, container, false)
+        val schedulesView: ListView = view.findViewById(R.id.lvSchedule)
 
-        // List view personal schedule
-        val SchedulesView: ListView = view.findViewById(R.id.lvSchedule)
-
-        adapter = MyScheduleAdapter(requireContext(), scheduleList)
-        SchedulesView.adapter = adapter
-
-
-
-        // button untuk pindah ke halaman add new schedule
-        val btnGoAddNewSchedule = view.findViewById<View>(R.id.btnGoAddNewSchedule)
-        btnGoAddNewSchedule.setOnClickListener {
-            val intent = Intent(activity, AddNewMyScheduleActivity::class.java)
+        // Pasang adapter dengan callback untuk item klik
+        adapter = MyScheduleAdapter(requireContext(), scheduleList) { schedule ->
+            // Kirim data ke MyScheduleDetailActivity
+            val intent = Intent(requireContext(), MyScheduleDetailActivity::class.java).apply {
+                putExtra("namaSchedule", schedule.namaSchedule)
+                putExtra("descSchedule", schedule.descSchedule)
+                putExtra("status", schedule.status)
+                putExtra("levelPrioritas", schedule.levelPrioritas)
+                putExtra("tenggat", schedule.tenggat)
+            }
             startActivity(intent)
         }
 
+        schedulesView.adapter = adapter
         daftarPersonalTasks()
-
         return view
     }
 

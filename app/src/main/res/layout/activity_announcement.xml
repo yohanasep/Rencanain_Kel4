@@ -7,10 +7,9 @@
     android:layout_height="match_parent"
     tools:context=".workspace.announcement.AnnouncementActivity"
     android:orientation="vertical"
-    android:padding="20dp">
+    android:layout_margin="20dp">
 
     <TextView
-        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="18sp"
@@ -18,16 +17,9 @@
         android:layout_marginTop="30dp"
         android:text="@string/labelAnnouncement" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvAnnouncement"
+    <ListView
+        android:id="@+id/lvAnnouncement"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/row_announcement"/>
-
-    <com.google.android.material.progressindicator.CircularProgressIndicator
-        android:id="@+id/loadingIndicator"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="gone" />
 </LinearLayout>

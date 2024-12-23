@@ -41,6 +41,15 @@ class MyScheduleFragment : Fragment() {
 
         schedulesView.adapter = adapter
         daftarPersonalTasks()
+
+
+        // button untuk pindah ke halaman add new schedule
+        val btnGoAddNewSchedule = view.findViewById<View>(R.id.btnGoAddNewSchedule)
+        btnGoAddNewSchedule.setOnClickListener {
+            val intent = Intent(activity, AddNewMyScheduleActivity::class.java)
+            startActivity(intent)
+        }
+
         return view
     }
 

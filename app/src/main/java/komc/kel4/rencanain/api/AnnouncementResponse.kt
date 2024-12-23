@@ -15,19 +15,24 @@ data class AnnouncementResponse(
 
     @SerializedName("data")
     @Expose
-    val data: JsonElement
+    val data: List<AnnouncementData>
 )
 
 data class AnnouncementData(
     @SerializedName("id_announcement")
     @Expose
-    val idAnnouncement: String?,
+    val idAnnouncement: String? = "",
 
     @SerializedName("announcement")
     @Expose
-    val isiAnnouncement: String?,
+    val isiAnnouncement: String? = "Tidak ada isi pengumuman.",
 
     @SerializedName("created_by")
     @Expose
-    val creator: String?,
+    val creator: String? = "Tidak diketahui",
+
+    @SerializedName("created_at")
+    @Expose
+    val createdAt: String? = ""
 )
+

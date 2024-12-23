@@ -5,7 +5,14 @@
     android:layout_height="match_parent"
     android:theme="@style/Theme.Rencanain"
     tools:context=".workspace.ProjectListFragment"
-    android:paddingVertical="20dp">
+    android:paddingVertical="20dp"
+    android:layout_marginHorizontal="10dp">
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:src="@drawable/baseline_notifications_24"/>
 
     <LinearLayout
         android:layout_width="match_parent"

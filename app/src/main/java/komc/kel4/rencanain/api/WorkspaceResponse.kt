@@ -21,19 +21,19 @@ data class WorkspaceResponse(
 data class Workspace(
     @SerializedName("id_projek")
     @Expose
-    val idProjek: String?,
+    val idProject: String?,
 
     @SerializedName("nama_projek")
     @Expose
-    val namaProjek: String?,
+    val namaProject: String?,
 
     @SerializedName("deskripsi")
     @Expose
-    val deskripsi: String?,
+    val deskripsiProject: String?,
 
     @SerializedName("status")
     @Expose
-    val statusWorkspace: String?,
+    val statusProject: String?,
 
     @SerializedName("creator")
     @Expose

@@ -1,5 +1,6 @@
 package komc.kel4.rencanain.workspace.announcement
 
+import android.content.Context
 import android.os.Bundle
 import android.widget.ListView
 import androidx.activity.enableEdgeToEdge
@@ -29,18 +30,16 @@ class AnnouncementActivity : AppCompatActivity() {
         adapter = AnnouncementAdapter(this, announcementList)
         AnnouncementRecyclerView.adapter = adapter
 
-        daftarAnnouncements()
+        daftarAnnouncement()
     }
 
-    fun daftarAnnouncements(){
-//        adapter.updateData(
-//            tasks.map {
-//                PersonalSchedule(
-//                    creator = it.namaCreator ?: "Unknown creator",
-//                    createdAt = it.createdAt ?: null,
-//                    isi = it.isiAnnouncement ?: "Unknown announcement",
-//                )
-//            }
-//        )
+    fun daftarAnnouncement() {
+//        val sharedPreferences = requireContext().getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
+//        val token = sharedPreferences.getString("TOKEN", null)
+//
+//        if (token == null) {
+//            Toast.makeText(requireContext(), "Token tidak ditemukan", Toast.LENGTH_SHORT).show()
+//            return
+//        }
     }
 }

@@ -1,6 +1,7 @@
 package komc.kel4.rencanain.utils
 
 import android.content.Context
+import android.util.Log
 import android.widget.Toast
 import komc.kel4.rencanain.api.*
 import komc.kel4.rencanain.workspace.myWorkspace
@@ -35,9 +36,11 @@ class WorkspaceHelper {
 
                     callback(limitedTasks.map {
                         myWorkspace(
-                            idProjek = it.idProjek ?: "Unknown ID",
-                            namaProjek = it.namaProjek ?: "Unknown Project",
-                            status = it.statusWorkspace ?: "Unknown Status"
+                            idProjek = it.idProject ?: "Unknown ID",
+                            namaProject = it.namaProject ?: "Unknown Project",
+                            statusProject = it.statusProject ?: "Unknown Status",
+                            deskripsiProject = it.deskripsiProject ?: "No Description",
+                            creator = it.creator ?: "Unknown Creator"
                         )
                     })
                 } else {
@@ -46,7 +49,7 @@ class WorkspaceHelper {
             }
 
             override fun onFailure(call: Call<WorkspaceResponse>, t: Throwable) {
-                Toast.makeText(context, "Kesalahan koneksi: ${t.message}", Toast.LENGTH_SHORT).show()
+                Log.d("WorkspaceHelper", "Error: ${t.message}")
             }
         })
     }

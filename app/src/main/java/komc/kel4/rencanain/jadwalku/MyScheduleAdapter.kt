@@ -10,11 +10,7 @@ import komc.kel4.rencanain.R
 
 class PersonalSchedule(val namaSchedule: String, val idSchedule: String, val descSchedule: String, val status: String, val levelPrioritas: String, val tenggat: String)
 
-class MyScheduleAdapter(
-    private val context: Context,
-    private var scheduleList: MutableList<PersonalSchedule>,
-    private val onItemClick: (PersonalSchedule) -> Unit
-) : BaseAdapter() {
+class MyScheduleAdapter(private val context: Context, private var scheduleList: List<PersonalSchedule>, private val onItemClick: (PersonalSchedule) -> Unit) : BaseAdapter() {
 
     fun updateData(newScheduleList: List<PersonalSchedule>) {
         scheduleList = newScheduleList.toMutableList()

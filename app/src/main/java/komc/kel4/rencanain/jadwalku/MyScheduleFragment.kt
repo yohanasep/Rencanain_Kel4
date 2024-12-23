@@ -3,18 +3,13 @@ package komc.kel4.rencanain.jadwalku
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ListView
 import android.widget.Toast
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import komc.kel4.rencanain.R
-import komc.kel4.rencanain.api.*
 import komc.kel4.rencanain.utils.MyScheduleHelper
 
 

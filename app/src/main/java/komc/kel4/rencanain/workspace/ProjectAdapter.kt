@@ -8,13 +8,9 @@ import android.widget.BaseAdapter
 import android.widget.TextView
 import komc.kel4.rencanain.R
 
-class myWorkspace(val idProjek: String, val namaProjek: String, val status: String)
+class myWorkspace(val idProjek: String, val namaProject: String, val statusProject: String, val deskripsiProject: String, val creator: String)
 
-class ProjectAdapter(
-    private val context: Context,
-    private var projectList: List<myWorkspace>,
-    private val onItemClick: (myWorkspace) -> Unit
-) : BaseAdapter() {
+class ProjectAdapter(private val context: Context, private var projectList: List<myWorkspace>, private val onItemClick: (myWorkspace) -> Unit) : BaseAdapter() {
 
     // Update data
     fun updateData(newWorkspaceList: List<myWorkspace>) {
@@ -41,8 +37,8 @@ class ProjectAdapter(
         val labelStatus = view.findViewById<TextView>(R.id.labelProjectStatus)
         val project = projectList[position]
 
-        labelTitle.text = project.namaProjek
-        labelStatus.text = project.status
+        labelTitle.text = project.namaProject
+        labelStatus.text = project.statusProject
 
         view.setOnClickListener {
             onItemClick(project) // Callback untuk klik item

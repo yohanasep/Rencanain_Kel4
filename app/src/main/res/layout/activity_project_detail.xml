@@ -27,6 +27,44 @@
         android:textColor="#000000"
         />
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:paddingStart="30dp"
+            android:text="Creator: "
+            android:textColor="#665555" />
+        <TextView
+            android:id="@+id/labelCreator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#665555" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:paddingStart="30dp"
+            android:text="@string/labelStatus"
+            android:textColor="#665555" />
+        <TextView
+            android:id="@+id/labelStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#665555" />
+    </LinearLayout>
+
     <TextView
         android:id="@+id/labelProjectDescription"
         android:layout_width="match_parent"

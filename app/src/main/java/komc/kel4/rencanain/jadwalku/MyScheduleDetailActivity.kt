@@ -1,12 +1,16 @@
 package komc.kel4.rencanain.jadwalku
 
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import komc.kel4.rencanain.R
+import komc.kel4.rencanain.api.UserApi
+import komc.kel4.rencanain.api.WorkspaceResponse
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MyScheduleDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,5 +31,22 @@ class MyScheduleDetailActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.labelStatus).text = status
         findViewById<TextView>(R.id.labelLevelPrioritas).text = levelPrioritas
         findViewById<TextView>(R.id.labelTenggat).text = tenggat
+
+        val btnDeleteSchedule = findViewById<ImageButton>(R.id.btnDeleteSchedule)
+        btnDeleteSchedule.setOnClickListener{
+//            userApi.tambahWorkspace("Bearer $token", workspaceRequest).enqueue(object : Callback<Void> {
+//                override fun onResponse(call: Call<Void>, response: Response<Void>) {
+//                    if (response.isSuccessful) {
+//                        println("Personal task deleted successfully!")
+//                    } else {
+//                        println("Failed to delete personal task: ${response.code()}")
+//                    }
+//                }
+//
+//                override fun onFailure(call: Call<Void>, t: Throwable) {
+//                    println("Error: ${t.message}")
+//                }
+//            })
+        }
     }
 }

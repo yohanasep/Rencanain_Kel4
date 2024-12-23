@@ -10,7 +10,6 @@ import android.view.ViewGroup
 import android.widget.ListView
 import android.widget.Toast
 import komc.kel4.rencanain.R
-import komc.kel4.rencanain.jadwalku.MyScheduleDetailActivity
 import komc.kel4.rencanain.utils.WorkspaceHelper
 
 class ProjectListFragment : Fragment() {
@@ -26,9 +25,11 @@ class ProjectListFragment : Fragment() {
 
         adapter = ProjectAdapter(requireContext(), scheduleList) { project ->
             val intent = Intent(requireContext(), ProjectDetailActivity::class.java).apply {
-                putExtra("namaProject", project.namaProjek)
-                putExtra("status", project.status)
-                // Tambahkan data lain sesuai kebutuhan
+                putExtra("idProject", project.idProjek)
+                putExtra("namaProject", project.namaProject)
+                putExtra("statusProject", project.statusProject)
+                putExtra("deskripsiProject", project.deskripsiProject)
+                putExtra("creator", project.creator)
             }
             startActivity(intent)
         }

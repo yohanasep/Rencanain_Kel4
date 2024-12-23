@@ -39,8 +39,7 @@ class AddNewMyScheduleActivity : AppCompatActivity() {
         val spinnerLevelPrioritas = findViewById<Spinner>(R.id.spinnerLevelPrioritas)
 
         val status = arrayOf("Not Started", "In Progress", "Completed")
-        val spinnerStatusAdapter =
-            ArrayAdapter(this@AddNewMyScheduleActivity, android.R.layout.simple_spinner_item, status)
+        val spinnerStatusAdapter = ArrayAdapter(this@AddNewMyScheduleActivity, android.R.layout.simple_spinner_item, status)
         spinnerStatusSchedule.adapter = spinnerStatusAdapter
 
         spinnerStatusSchedule.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -52,8 +51,7 @@ class AddNewMyScheduleActivity : AppCompatActivity() {
         }
 
         val levelPrioritas = arrayOf("Low", "Medium", "High")
-        val spinnerLevelPrioritasAdapter =
-            ArrayAdapter(this@AddNewMyScheduleActivity, android.R.layout.simple_spinner_item, levelPrioritas)
+        val spinnerLevelPrioritasAdapter = ArrayAdapter(this@AddNewMyScheduleActivity, android.R.layout.simple_spinner_item, levelPrioritas)
         spinnerLevelPrioritas.adapter = spinnerLevelPrioritasAdapter
 
         spinnerLevelPrioritas.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {

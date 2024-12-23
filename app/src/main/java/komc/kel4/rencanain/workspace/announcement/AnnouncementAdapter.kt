@@ -10,7 +10,13 @@ import komc.kel4.rencanain.R
 
 data class Announcement(val creator: String, val createdAt: String, val isi: String)
 
-class AnnouncementAdapter(private val context: Context, private val announcementList: MutableList<Announcement>) : BaseAdapter() {
+class AnnouncementAdapter(private val context: Context, private var announcementList: List<Announcement>) : BaseAdapter() {
+    // Update data
+    fun updateData(newAnnoucementList: List<Announcement>) {
+        announcementList = newAnnoucementList.toMutableList()
+        notifyDataSetChanged()
+    }
+
     override fun getCount(): Int {
         return announcementList.size
     }

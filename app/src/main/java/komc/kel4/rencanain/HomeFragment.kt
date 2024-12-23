@@ -41,8 +41,8 @@ class HomeFragment : Fragment() {
         val WorkspacesView: ListView = view.findViewById(R.id.lvProject_HOME)
         projectAdapter = ProjectAdapter(requireContext(), projectList) { project ->
             val intent = Intent(requireContext(), ProjectDetailActivity::class.java).apply {
-                putExtra("namaProject", project.namaProjek)
-                putExtra("status", project.status)
+                putExtra("namaProject", project.namaProject)
+                putExtra("status", project.statusProject)
                 // Tambahkan data lain sesuai kebutuhan
             }
             startActivity(intent)

@@ -18,7 +18,7 @@ data class AnnouncementResponse(
     val data: JsonElement
 )
 
-data class Announcement(
+data class AnnouncementData(
     @SerializedName("id_announcement")
     @Expose
     val idAnnouncement: String?,

@@ -29,6 +29,7 @@ class MyScheduleFragment : Fragment() {
         adapter = MyScheduleAdapter(requireContext(), scheduleList) { schedule ->
             // Kirim data ke MyScheduleDetailActivity
             val intent = Intent(requireContext(), MyScheduleDetailActivity::class.java).apply {
+                putExtra("idSchedule", schedule.idSchedule)
                 putExtra("namaSchedule", schedule.namaSchedule)
                 putExtra("descSchedule", schedule.descSchedule)
                 putExtra("status", schedule.status)

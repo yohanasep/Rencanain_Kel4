@@ -1,6 +1,7 @@
 package komc.kel4.rencanain.utils
 
 import android.content.Context
+import android.util.Log
 import android.widget.Toast
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -13,7 +14,7 @@ import retrofit2.Response
 class MyScheduleHelper {
     fun daftarPersonalTasks(context: Context, token: String, limit: Int? = null, callback: (List<PersonalSchedule>) -> Unit) {
         if (token.isEmpty()) {
-            Toast.makeText(context, "Token tidak ditemukan", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Sesi Anda telah habis, harap lakukan login ulang", Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -49,7 +50,8 @@ class MyScheduleHelper {
             }
 
             override fun onFailure(call: Call<PersonalTaskResponse>, t: Throwable) {
-                Toast.makeText(context, "Kesalahan koneksi: ${t.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Kesalahan koneksi. Silakan coba lagi.", Toast.LENGTH_SHORT).show()
+                Log.d("MyScheduleHelper", "Gagal memproses permintaan: ${t.message}")
             }
         })
     }

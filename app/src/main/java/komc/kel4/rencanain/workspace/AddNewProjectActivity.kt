@@ -97,7 +97,7 @@ class AddNewProjectActivity : AppCompatActivity() {
         println("Token yang digunakan: $token")
 
         if (token.isNullOrEmpty()) {
-            Toast.makeText(this, "Token tidak ditemukan. Harap login ulang.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Sesi Anda telah habis, harap lakukan login ulang.", Toast.LENGTH_SHORT).show()
             return
         }
 

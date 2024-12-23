@@ -7,6 +7,7 @@ import retrofit2.http.DELETE
 import retrofit2.http.Path
 import retrofit2.http.POST
 import retrofit2.http.GET
+import retrofit2.http.PUT
 
 
 interface UserApi {
@@ -50,6 +51,13 @@ interface UserApi {
         @Path("id") id: String
     ): Call<Void>
 
+    // edit personal task endpoint
+    @PUT("personaltask/{id}")
+    fun editPersonalTask(
+        @Header("Authorization") token: String,
+        @Path("id") id: String
+    ): Call<PersonalTaskResponse>
+
     // WORKSPACE //
     // daftar workspace endpoint
     @GET("workspaces")
@@ -64,10 +72,10 @@ interface UserApi {
         @Body workspaceRequest: WorkspaceRequest
     ): Call<WorkspaceResponse>
 
-    // daftar workspace endpoint
+    // daftar announcement endpoint
     @GET("workspaces/{ws_id}/announcement")
     fun daftarAnnouncement(
-        @Path("ws_id") ws_id: String,
+        @Path("ws_id") wsId: String,
         @Header("Authorization") token: String
     ): Call<AnnouncementResponse>
 

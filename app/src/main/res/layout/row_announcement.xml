@@ -11,20 +11,17 @@
         android:id="@+id/labelCreatorName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:text="untukNamaPengunggah" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/labelCreatedAt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:text="createdAt" />
+        android:layout_marginTop="2dp" />
 
     <TextView
         android:id="@+id/isiAnnouncement"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="isine" />
+        android:layout_marginTop="10dp" />
 </LinearLayout>

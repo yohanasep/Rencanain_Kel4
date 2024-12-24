@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginVertical="20dp"
+    android:paddingVertical="10dp"
+    android:theme="@style/Theme.Rencanain">
+
+    <TextView
+        android:id="@+id/labelSubTask"
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ProgressBar
+            android:id="@+id/progressBarSubTask"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="279dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:gravity="end"
+            android:text="0%"/>
+    </LinearLayout>
+</LinearLayout>

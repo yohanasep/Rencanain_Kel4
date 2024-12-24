@@ -12,12 +12,12 @@ Tim pengembang: Kelompok 4
   Role : Back-End (Membuat API CRUD Workspace, CRUD Annoucement dan Invite member workspace)
 
 - Yohana Septamia - 221402056
-  Role : Project Manager & Front End (Project List dan Project Detail dan Subtask), Menghubungkan API Register
+  Role : Project Manager & Front End (Project List dan Project Detail dan Subtask), Menghubungkan API Register, Detail Workspace, dan Announcement
 
 - Melia Purnamasari Sihombing - 221402112
-  Role : Back-End (Membuat API Personal Task, Login dan Register), Menghubungkan API Login, Personal Schedule, dan Workspace
+  Role : Back-End (Membuat API Personal Task, Login dan Register), Menghubungkan API Login, Personal Schedule List & Detail, dan Workspace List
 
-- Muhammad Ahsanul Kholiqin Lubis - 221402115  
+- Muhammad Ahsanul Kholiqin Lubis - 221402115
   Role : UI/UX Designer, Front End(Profile) & Tester
 
 - Yeni Aulia Sinaga - 221402138
@@ -141,7 +141,6 @@ Ketiga pustaka ini sering digunakan bersama-sama untuk membangun aplikasi Androi
 
 ## Permission
 INTERNET Deskripsi : Memberikan izin kepada aplikasi untuk mengakses jaringan internet. Izin ini penting jika aplikasi ingin mengakses sumber daya online, seperti API, server, atau website.
-INTERNET Deskripsi : Memberikan izin kepada aplikasi untuk mengakses jaringan internet. Izin ini penting jika aplikasi ingin mengakses sumber daya online, seperti API, server, atau website.
 
 ## Environment
 
@@ -157,6 +156,9 @@ Beberapa syarat environment untuk menjalankan aplikasi ini:
 - **JDK**: Java Development Kit versi 11.
 - **Gradle**: Versi yang sesuai dengan Android Studio terbaru.
 
+## Design
+Link Figma : https://www.figma.com/design/CUL1hr2bRXVuySqB5KK0ZF/Pemmob?node-id=0-1&t=LBzhnV2S6WbHMc0D-1
+
 ### Instalasi dan Setup
 
 1. **Install Android Studio**
@@ -170,7 +172,58 @@ Beberapa syarat environment untuk menjalankan aplikasi ini:
       git clone https://github.com/kelompok4/rencanain.git
       ```
       ```
-      cd Rencanain
+      git clone https://github.com/MeliaPrnmsr/RencanainAPI.git
       ```
-
-Link Figma : https://www.figma.com/design/CUL1hr2bRXVuySqB5KK0ZF/Pemmob?node-id=0-1&t=LBzhnV2S6WbHMc0D-1
+4. **Setup database**
+    - Pastikan Anda memiliki MySQL atau MariaDB terinstal.
+    - Buka MySQL/MariaDB dan buat database baru untuk aplikasi backend
+      ```
+      CREATE DATABASE rencanain;
+      ```
+5. **Konfigurasi Backend**
+     - Buka folder RencanainAPI pada IDE yang digunakan dan buka terminal
+     ```
+     cp .env.example .env
+     ```
+     - Atur variabel berikut pada file .env
+     ```
+     DB_CONNECTION=mysql
+     DB_HOST=127.0.0.1
+     DB_PORT=3306
+     DB_DATABASE=rencanain
+     DB_USERNAME=[username]
+     DB_PASSWORD=[password]
+     ```
+     - Jalankan perintah berikut untuk menginstal dependensi Laravel
+     ```
+     composer install
+     ```
+     - Generate key
+     ```
+     php artisan key:generate
+     ```
+     - Jalankan migrasi database
+     ```
+     php artisan migrate --seed
+     ```
+      - Cek IP kamu pada terminal
+     ```
+     ipconfig
+     ```
+     - Jalankan server backend dengan host yang disesuaikan dengan IP kamu
+     ```
+     php artisan serve --host=ip_kamu --port=8000
+     ```
+6. **Setup Frontend**
+     - Buka Android Studio dan pilih opsi Open Project.
+     - Arahkan ke folder rencanain dan buka proyek.
+     - Tunggu hingga semua dependensi terinstal otomatis melalui Gradle.
+     - Setup Retro
+       - Buka file Retro.kt pada app/src/main/java/komc/kel4/rencanain/api/Retro.kt
+       - ubah baseUrl sesuai dengan IP kamu
+     ```
+      .baseUrl("http://ip_kamu:8000/api/")
+     ```
+     - Jalankan aplikasi di emulator atau perangkat fisik
+     - Pilih perangkat target di Android Studio.
+     - Klik tombol Run (ikon segitiga hijau) di toolbar.

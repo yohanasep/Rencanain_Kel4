@@ -181,11 +181,11 @@ Link Figma : https://www.figma.com/design/CUL1hr2bRXVuySqB5KK0ZF/Pemmob?node-id=
       CREATE DATABASE rencanain;
       ```
 5. **Konfigurasi Backend**
-     - Buka folder RencanainAPI pada IDE yang digunakan dan buka terminal
+    - Buka folder RencanainAPI pada IDE yang digunakan dan buka terminal
      ```
      cp .env.example .env
      ```
-     - Atur variabel berikut pada file .env
+    - Atur variabel berikut pada file .env
      ```
      DB_CONNECTION=mysql
      DB_HOST=127.0.0.1
@@ -194,36 +194,40 @@ Link Figma : https://www.figma.com/design/CUL1hr2bRXVuySqB5KK0ZF/Pemmob?node-id=
      DB_USERNAME=[username]
      DB_PASSWORD=[password]
      ```
-     - Jalankan perintah berikut untuk menginstal dependensi Laravel
+    - Jalankan perintah berikut untuk menginstal dependensi Laravel
      ```
      composer install
      ```
-     - Generate key
+    - Generate key
      ```
      php artisan key:generate
      ```
-     - Jalankan migrasi database
+    - Jalankan migrasi database
      ```
      php artisan migrate --seed
      ```
-      - Cek IP kamu pada terminal
+    - Cek IP kamu pada terminal
      ```
      ipconfig
      ```
-     - Jalankan server backend dengan host yang disesuaikan dengan IP kamu
+   - Jalankan server backend dengan host yang disesuaikan dengan IP kamu
      ```
      php artisan serve --host=ip_kamu --port=8000
      ```
 6. **Setup Frontend**
-     - Buka Android Studio dan pilih opsi Open Project.
-     - Arahkan ke folder rencanain dan buka proyek.
-     - Tunggu hingga semua dependensi terinstal otomatis melalui Gradle.
-     - Setup Retro
-       - Buka file Retro.kt pada app/src/main/java/komc/kel4/rencanain/api/Retro.kt
-       - ubah baseUrl sesuai dengan IP kamu
+   - Buka Android Studio dan pilih opsi Open Project.
+   - Arahkan ke folder rencanain dan buka proyek.
+   - Tunggu hingga semua dependensi terinstal otomatis melalui Gradle.
+   - Setup Retro
+     - Buka file Retro.kt pada app/src/main/java/komc/kel4/rencanain/api/Retro.kt
+     - ubah baseUrl sesuai dengan IP kamu
      ```
       .baseUrl("http://ip_kamu:8000/api/")
      ```
-     - Jalankan aplikasi di emulator atau perangkat fisik
-     - Pilih perangkat target di Android Studio.
-     - Klik tombol Run (ikon segitiga hijau) di toolbar.
+  - Jalankan aplikasi di emulator atau perangkat fisik
+  - Pilih perangkat target di Android Studio.
+  - Klik tombol Run (ikon segitiga hijau) di toolbar.
+  
+## Persyaratan Sistem
+  - Minimum SDK: API 27 (Android 8.1 Oreo)
+  - Target SDK: API 33 (Android 13)

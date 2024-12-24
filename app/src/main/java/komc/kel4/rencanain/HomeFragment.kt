@@ -3,6 +3,7 @@ package komc.kel4.rencanain
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -35,16 +36,18 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
         val WorkspacesView: ListView = view.findViewById(R.id.lvProject_HOME)
         projectAdapter = ProjectAdapter(requireContext(), projectList) { project ->
             val intent = Intent(requireContext(), ProjectDetailActivity::class.java).apply {
+                putExtra("idProject", project.idProjek)
                 putExtra("namaProject", project.namaProject)
-                putExtra("status", project.statusProject)
-                // Tambahkan data lain sesuai kebutuhan
+                putExtra("statusProject", project.statusProject)
+                putExtra("deskripsiProject", project.deskripsiProject)
+                putExtra("creator", project.creator)
             }
+
             startActivity(intent)
         }
         WorkspacesView.adapter = projectAdapter
@@ -81,8 +84,6 @@ class HomeFragment : Fragment() {
             }
         }
 
-//        setButtonClickListener(R.id.btnProject_HOME, ProjectListFragment(), R.id.menuProjects)
-//        setButtonClickListener(R.id.btnMySchedule_HOME, MyScheduleFragment(), R.id.menuSchedules)
 
         daftarWorkspace()
         daftarPersonalTask()

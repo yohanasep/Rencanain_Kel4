@@ -38,7 +38,7 @@ class AddNewMyScheduleActivity : AppCompatActivity() {
         val spinnerStatusSchedule = findViewById<Spinner>(R.id.spinnerStatusSchedule)
         val spinnerLevelPrioritas = findViewById<Spinner>(R.id.spinnerLevelPrioritas)
 
-        val status = arrayOf("Not Started", "In Progress", "Completed")
+        val status = arrayOf("Not Started", "In Progress", "Done")
         val spinnerStatusAdapter = ArrayAdapter(this@AddNewMyScheduleActivity, android.R.layout.simple_spinner_item, status)
         spinnerStatusSchedule.adapter = spinnerStatusAdapter
 
@@ -116,7 +116,7 @@ class AddNewMyScheduleActivity : AppCompatActivity() {
                             val personalTask = Gson().fromJson(dataElement, PersonalTaskResponse::class.java)
                             workspaceList.add(personalTask)
                         } else {
-                            println("Data element is neither JSON Array nor JSON Object")
+                            println("Data tidak valid")
                         }
                     }
                     Toast.makeText(this@AddNewMyScheduleActivity, "Personal Task berhasil ditambahkan!", Toast.LENGTH_SHORT).show()

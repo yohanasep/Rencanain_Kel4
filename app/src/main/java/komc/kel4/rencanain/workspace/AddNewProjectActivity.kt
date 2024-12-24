@@ -46,7 +46,7 @@ class AddNewProjectActivity : AppCompatActivity() {
             inviteMembersContainer.addView(newEditText)
         }
 
-        val status = arrayOf("Not Started", "In Progress", "Completed")
+        val status = arrayOf("Not Started", "In Progress", "Done")
         val spinnerStatusAdapter =
             ArrayAdapter(this@AddNewProjectActivity, android.R.layout.simple_spinner_item, status)
         spinnerStatusAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)

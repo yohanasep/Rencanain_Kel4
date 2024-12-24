@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -36,6 +37,28 @@ class ProjectDetailActivity : AppCompatActivity() {
                     putExtra("idProject", idProject)
                 }
                 startActivity(intent)
+            } else {
+                Toast.makeText(this, "ID Project tidak valid.", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        findViewById<ImageButton>(R.id.btnDaftarMember).setOnClickListener {
+            if (idProject.isNotEmpty()) {
+                val intentMemberList = Intent(this, MemberListActivity::class.java).apply {
+                    putExtra("idProject", idProject)
+                }
+                startActivity(intentMemberList)
+            } else {
+                Toast.makeText(this, "ID Project tidak valid.", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        findViewById<ImageButton>(R.id.imgBtnAddProjectTask).setOnClickListener {
+            if (idProject.isNotEmpty()) {
+                val intentSubTask = Intent(this, AddSubTaskActivity::class.java).apply {
+                    putExtra("idProject", idProject)
+                }
+                startActivity(intentSubTask)
             } else {
                 Toast.makeText(this, "ID Project tidak valid.", Toast.LENGTH_SHORT).show()
             }

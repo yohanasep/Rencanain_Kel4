@@ -9,23 +9,35 @@
     android:theme="@style/Theme.Rencanain"
     tools:context=".workspace.ProjectDetailActivity">
 
+    <ImageButton
+        android:id="@+id/btnDaftarMember"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:background="#007E85"
+        android:padding="8dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginHorizontal="30dp"
+        android:tint="@android:color/white"
+        android:src="@drawable/baseline_groups_24"/>
+
     <ImageView
         android:id="@+id/imgProject"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:layout_marginTop="40dp"
         app:srcCompat="@drawable/baseline_image_24"/>
 
-    <TextView
-        android:id="@+id/labelProjectTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:text="untukJudul"
-        android:paddingHorizontal="30dp"
-        android:textColor="#000000"
-        />
+
+        <TextView
+            android:id="@+id/labelProjectTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingHorizontal="30dp"
+            android:text="untukJudul"
+            android:textColor="#000000" />
+
 
     <LinearLayout
         android:layout_width="wrap_content"

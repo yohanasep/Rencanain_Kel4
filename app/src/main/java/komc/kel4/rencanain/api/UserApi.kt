@@ -79,4 +79,10 @@ interface UserApi {
         @Header("Authorization") token: String
     ): Call<AnnouncementResponse>
 
+    @POST("workspaces/{ws_id}/announcement")
+    fun tambahAnnouncement(
+        @Path("ws_id") wsId: String,
+        @Body announcementRequest: AnnouncementRequest,
+        @Header("Authorization") token: String
+    ): Call<AnnouncementResponse>
 }

@@ -16,6 +16,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".workspace.announcement.AddNewAnnouncementActivity"
+            android:exported="false" />
+        <activity
             android:name=".workspace.announcement.AnnouncementActivity"
             android:exported="false" />
         <activity

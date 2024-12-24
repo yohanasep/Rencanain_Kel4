@@ -35,8 +35,7 @@ class AddNewProjectActivity : AppCompatActivity() {
         val spinnerStatusProject = findViewById<Spinner>(R.id.spinnerStatusProject)
         val btnSubmitAddProject = findViewById<Button>(R.id.btnSubmitAddProject)
 
-        btnAddMoreMembers.setOnClickListener {
-            val newEditText = EditText(this)
+        btnAddMoreMembers.setOnClickListener { val newEditText = EditText(this)
             newEditText.layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT

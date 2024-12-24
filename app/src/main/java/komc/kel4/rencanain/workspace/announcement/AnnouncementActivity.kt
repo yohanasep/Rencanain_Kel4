@@ -1,12 +1,17 @@
 package komc.kel4.rencanain.workspace.announcement
 
+import android.content.Intent
 import android.icu.text.SimpleDateFormat
 import android.os.Bundle
 import android.util.Log
 import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import komc.kel4.rencanain.R
+import komc.kel4.rencanain.api.AnnouncementData
 import komc.kel4.rencanain.api.AnnouncementResponse
 import komc.kel4.rencanain.api.Retro
 import komc.kel4.rencanain.api.UserApi
@@ -37,6 +42,13 @@ class AnnouncementActivity : AppCompatActivity() {
             announcementList.addAll(announcements)
             adapter.updateData(announcementList)
         }
+
+        val btnGoAddNewAnnouncement: FloatingActionButton = findViewById(R.id.btnGoAddNewAnnouncement)
+        btnGoAddNewAnnouncement.setOnClickListener {
+            val intent = Intent(this, AddNewAnnouncementActivity::class.java)
+            intent.putExtra("idProject", idProject)
+            startActivity(intent)
+        }
     }
 
     fun daftarAnnouncement(idProject: String, callback: (List<Announcement>) -> Unit) {
@@ -53,17 +65,19 @@ class AnnouncementActivity : AppCompatActivity() {
         userApi.daftarAnnouncement(idProject, "Bearer $token").enqueue(object : Callback<AnnouncementResponse> {
             override fun onResponse(call: Call<AnnouncementResponse>, response: Response<AnnouncementResponse>) {
                 if (response.isSuccessful) {
-                    val data = response.body()?.data.orEmpty()
-                    Log.d("AnnouncementActivity", "Data received: $data")
+                    val data = response.body()!!.data
 
-                    val announcements = data.map {
+                    val gson = Gson()
+                    val announcementType = object : TypeToken<List<AnnouncementData>>() {}.type
+                    val announcements: List<AnnouncementData> = gson.fromJson(data, announcementType)
+
+                    callback(announcements.map {
                         Announcement(
                             creator = it.creator ?: "Tidak diketahui",
                             createdAt = formatDate(it.createdAt ?: ""),
                             isi = it.isiAnnouncement ?: "Tidak ada isi pengumuman."
                         )
-                    }
-                    callback(announcements)
+                    })
                 } else {
                     Log.d("AnnouncementActivity", "Gagal mengambil data: ${response.code()}")
                     Toast.makeText(this@AnnouncementActivity, "Gagal mengambil data. Silakan coba lagi.", Toast.LENGTH_SHORT).show()

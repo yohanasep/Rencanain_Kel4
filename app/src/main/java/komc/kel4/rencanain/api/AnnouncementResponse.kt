@@ -5,9 +5,9 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 data class AnnouncementResponse(
-    @SerializedName("status")
+    @SerializedName("success")
     @Expose
-    val status: Boolean,
+    val success: Boolean,
 
     @SerializedName("message")
     @Expose
@@ -15,7 +15,7 @@ data class AnnouncementResponse(
 
     @SerializedName("data")
     @Expose
-    val data: List<AnnouncementData>
+    val data: JsonElement
 )
 
 data class AnnouncementData(
